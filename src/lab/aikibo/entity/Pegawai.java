@@ -8,6 +8,18 @@ public class Pegawai implements Serializable {
 	
 	private String nip;
 	private String nmPegawai;
-	private String
+	
+	public String getNip() {
+		return nip;
+	}
+	public void setNip(String nip) {
+		this.nip = nip;
+	}
+	public String getNmPegawai() {
+		return nmPegawai;
+	}
+	public void setNmPegawai(String nmPegawai) {
+		this.nmPegawai = nmPegawai;
+	}
 
 }

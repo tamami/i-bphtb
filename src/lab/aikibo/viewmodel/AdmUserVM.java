@@ -28,6 +28,7 @@ public class AdmUserVM {
 	
 	private int status; // lihat lab.aikibo.constant.StatusEntry
 	private UserManager um;
+	private PegawaiManager pm;
 	private boolean roTbNip;
 	private boolean roTbNamaPegawai;
 	private boolean roTbNamaUser;
@@ -52,6 +53,7 @@ public class AdmUserVM {
 	@Init
 	public void init() {
 		um = new UserManager();
+		pm = new PegawaiManager();
 		
 		clear();
 	}
@@ -186,7 +188,7 @@ public class AdmUserVM {
 		if(verifikasiData()) {
 			DatLogin data = um.getUserByNip(currentNip);
 			try {
-				data.setPassword(Encrypt.getEncrypted2(currentPassBaru));
+				data.setPassword(Encrypt.getEncrypted(currentPassBaru));
 			} catch (InvalidKeyException e) {
 				getMessageForInvalidKeyError();
 				e.printStackTrace();
@@ -230,7 +232,7 @@ public class AdmUserVM {
 		}	
 		try {
 			if(status == StatusEntry.UBAH_DATA &&
-				!Encrypt.getEncrypted2(currentPassPengubah).equals(um.getPassword(currentPengguna))
+				!Encrypt.getEncrypted(currentPassPengubah).equals(um.getPassword(currentPengguna))
 						&& currentPassPengubah != null) {
 				  Clients.showNotification("Password Pengubah salah");
 				  return false;
@@ -277,6 +279,7 @@ public class AdmUserVM {
 		else return data.getNmLogin();
 	}
 	
+	@SuppressWarnings("unused")
 	private String getNipFromNmLogin() {
 		String data = um.getNip(currentPengguna);
 		if(data.isEmpty() || data == null) return null;

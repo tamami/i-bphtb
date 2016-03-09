@@ -16,6 +16,7 @@ public class PegawaiManager {
 		session.beginTransaction();
 		Criteria criteria = session.createCriteria(Pegawai.class);
 		criteria.add(Restrictions.eq("nip", nip));
+		@SuppressWarnings("unchecked")
 		List<Pegawai> data = criteria.list();
 		if(data.size() == 1) return data.get(0).getNmPegawai();
 		else return "";

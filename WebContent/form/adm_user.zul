@@ -74,8 +74,3 @@
   </vlayout>
 </window>
 </zk><?page title="new page title" contentType="text/html;charset=UTF-8"?>
-<zk>
-<window title="new page title" border="normal">
-New Content Here!
-</window>
-</zk>
