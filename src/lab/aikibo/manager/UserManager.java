@@ -1,9 +1,13 @@
 package lab.aikibo.manager;
 
 import java.util.Iterator;
+import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.zkoss.zk.ui.util.Clients;
 
 import lab.aikibo.hibernate.HibernateUtil;
@@ -73,7 +77,42 @@ public class UserManager {
 	}
 	
 	public List<DatLogin> getListUser() {
-		
+		List<DatLogin> list;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		list = session.createQuery("from DatLogin").list();
+		return list;
+	}
+	
+	public List<String> getListUserInString() {
+		List<DatLogin> list;
+		list = getListUser();
+		List<String> result = new LinkedList<String>();
+		for(int i=0; i<result.size(); i++) {
+			result.add(data.get(i).getNmLogin());
+		}
+		return result;
+	}
+	
+	public DatLogin getUserByNip(String nip) {
+		List<DatLogin> list;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Criteria criteria = session.createCriteria((DatLogin.class);
+		criteria.add(Restrictions.eq("nip", nip));
+		list = criteria.list();
+		if(list != null) {
+			return list.get(0);
+		} else {
+			return null;
+		}
+	}
+	
+	public void saveOrUpdate(DatLogin user) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.saveOrUpdate(user);
+		Transaction tx = session.beginTransaction();
+		tx.commit();
 	}
 
 }
