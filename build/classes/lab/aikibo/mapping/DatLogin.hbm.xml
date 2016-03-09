@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+  SYSTEM "classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="lab.aikibo.entity.DatLogin" table="dat_login">
+    <id name="nmLogin" type="string">
+      <column name="nm_login" />
+    </id>
+    <property name="nip" type="string">
+      <column name="nip" />
+    </property>
+    <property name="password" type="string">
+      <column name="password" />
+    </property>
+  </class>
+</hibernate-mapping>
