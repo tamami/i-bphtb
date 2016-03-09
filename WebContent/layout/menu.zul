@@ -1,7 +1,7 @@
 <zk>
   <menubar id="menubar" apply="org.zkoss.bind.BindComposer"
       viewModel="@id('menuController') @init('lab.aikibo.viewmodel.MenuVM')">
-    <menu id="konfigurasi" label="Konfigurasi" if="${menuController.fileMn }">
+    <menu id="konfigurasi" label="Konfigurasi" if="${menuController.konfigurasiMn }">
       <menupopup>
         <menuitem id="admUser" label="Administrasi User" if="${menuController.admUserMn }"
             onClick="@global-command('callAdmUser')" />

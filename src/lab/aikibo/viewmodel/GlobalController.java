@@ -25,5 +25,11 @@ public class GlobalController extends SelectorComposer<Component>
 		include.setSrc("/timeout.zul");
 		Clients.showNotification("login.zul sudah dipanggil");
 	}
+	
+	@GlobalCommand
+	public void callAdmUser() {
+		Include include = (Include) Selectors.iterable(getPage(), "#mainInclude").iterator().next();
+		include.setSrc("/form/adm_user.zul");
+	}
 
 }

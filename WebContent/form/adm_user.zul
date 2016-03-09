@@ -1,0 +1,81 @@
+<zk>
+<window title="Administrasi User" border="normal" mode="modal"
+    width="700px" height="500" closable="true"
+    apply="org.zkoss.bind.BindComposer"
+    viewModel="@id('adm_user_vm') @init('lab.aikibo.viewmodel.AdmUserVM')">
+  <vlayout>
+    <panel border="rounded" title="Pengguna" collapsible="true">
+      <panelchildren>
+        <hbox>
+          <label value="Pengguna"/>
+          <listbox mold="select" model="@bind(adm_user_vm.daftarLogin)"
+              selectedItem="@bind(adm_user_vm.currentLogin)"/>
+        </hbox>
+      </panelchildren>
+    </panel>
+    <panel border="rounded" title="Data Pengguna" collapsible="true">
+      <panelchildren>
+        <grid>
+          <columns>
+            <column align="right" width="200px" />
+            <column align="left" />
+          </columns>
+          <rows>
+            <row>
+              NIP
+              <hbox>
+                <textbox readonly="@bind(adm_user_vm.roTbNip)" 
+                    value="@bind(adm_user_vm.currentNip)"
+                    constraint="/\d{9}/: Isikan dengan 9 digit kode pengguna"/>
+                <textbox readonly="@bind(adm_user_vm.roTbNamaPegawai)" 
+                    value="@bind(adm_user_vm.currentPegawai)"/>
+              </hbox>
+            </row>
+            <row>
+              Pengguna
+              <textbox readonly="@bind(adm_user_vm.roTbNamaUser)"
+                  value="@bind(adm_user_vm.currentPengguna)"/>
+            </row>
+            <row>
+              Password Pengubah
+              <textbox type="password" readonly="@bind(adm_user_vm.roTbPassPengubah)"
+                  value="@bind(adm_user_vm.currentPassPengubah)"/>
+            </row>
+            <row>
+              Password Baru
+              <textbox type="password" readonly="@bind(adm_user_vm.roTbPassBaru)"
+                  value="@bind(adm_user_vm.currentPassBaru)"/> 
+            </row>
+            <row>
+              Ulangi Password Baru
+              <textbox type="password" readonly="@bind(adm_user_vm.roTbPassBaruConfirm)"
+                  value="@bind(adm_user_vm.currentPassBaruConfirm)"/>
+            </row>
+          </rows>
+        </grid>
+      </panelchildren>
+    </panel>
+    <panel border="rounded" collapsible="true">
+      <panelchildren>
+        <hbox align="center" pack="center" hflex="1">
+          <button label="Ubah" onClick="@command('ubahClick')"
+              disabled="@bind(adm_user_vm.enBtnUbah)"/>
+          <button label="Hapus" onClick="@command('hapusClick')"
+              disabled="@bind(adm_user_vm.enBtnHapus)"/>
+          <button label="Baru" onClick="@command('baruClick')"
+              disabled="@bind(adm_user_vm.enBtnBaru)"/>
+          <button label="Simpan" onClick="@command('simpanClick')" 
+              disabled="@bind(adm_user_vm.enBtnSimpan)"/>
+          <button label="Batal" onClick="@command('batalClick')"
+              disabled="@bind(adm_user_vm.enBtnBatal)"/>
+        </hbox>
+      </panelchildren>
+    </panel>
+  </vlayout>
+</window>
+</zk><?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="new page title" border="normal">
+New Content Here!
+</window>
+</zk>
