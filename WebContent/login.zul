@@ -19,7 +19,7 @@
                 <textbox id="account" width="200px"
                     value="@bind(login_vm.username)" 
                     focus="@bind(login_vm.fokusUsername)">
-                  <attribute name="onOK">
+                  <attribute name="onOK"> <!-- pada saat tekan enter, akan pindah ke field Password -->
                     <![CDATA[password.focus();]]>
                   </attribute>
                 </textbox>
