@@ -1,6 +1,7 @@
 package lab.aikibo.manager;
 
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -10,6 +11,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.zkoss.zk.ui.util.Clients;
 
+import lab.aikibo.entity.DatLogin;
 import lab.aikibo.hibernate.HibernateUtil;
 
 public class UserManager {
@@ -29,6 +31,7 @@ public class UserManager {
 		try {
 			Query query = session.createQuery(sql);
 			query.setString("username", username);
+			@SuppressWarnings("rawtypes")
 			Iterator iterator = query.iterate();
 			while(iterator.hasNext()) {
 				String user = (String) iterator.next();
@@ -52,6 +55,8 @@ public class UserManager {
 			String sql = "select password from DatLogin where nmLogin = :username";
 			Query query = session.createQuery(sql);
 			query.setString("username", username);
+			
+			@SuppressWarnings("rawtypes")
 			Iterator iterator = query.iterate();
 			password = (String) iterator.next();
 			return password;
@@ -59,6 +64,7 @@ public class UserManager {
 			return null;
 		}
 	}
+	
 	
 	public String getNip(String username) {
 		String nip;
@@ -68,7 +74,10 @@ public class UserManager {
 			String sql = "select nip from DatLogin where nmLogin = :username";
 			Query query = session.createQuery(sql);
 			query.setString("username", username);
+	
+			@SuppressWarnings("rawtypes")
 			Iterator iterator = query.iterate();
+			
 			nip = (String) iterator.next();
 			return nip;
 		} else {
@@ -76,6 +85,7 @@ public class UserManager {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<DatLogin> getListUser() {
 		List<DatLogin> list;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -89,16 +99,17 @@ public class UserManager {
 		list = getListUser();
 		List<String> result = new LinkedList<String>();
 		for(int i=0; i<result.size(); i++) {
-			result.add(data.get(i).getNmLogin());
+			result.add(list.get(i).getNmLogin());
 		}
 		return result;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public DatLogin getUserByNip(String nip) {
 		List<DatLogin> list;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Criteria criteria = session.createCriteria((DatLogin.class);
+		Criteria criteria = session.createCriteria(DatLogin.class);
 		criteria.add(Restrictions.eq("nip", nip));
 		list = criteria.list();
 		if(list != null) {
