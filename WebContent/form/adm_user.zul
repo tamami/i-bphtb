@@ -26,7 +26,7 @@
               <hbox>
                 <textbox readonly="@bind(adm_user_vm.roTbNip)" 
                     value="@bind(adm_user_vm.currentNip)"
-                    constraint="/\d{9}/: Isikan dengan 9 digit kode pengguna"/>
+                    constraint="/\d{18}/: Isikan dengan 18 digit NIP tanpa jeda"/>
                 <textbox readonly="@bind(adm_user_vm.roTbNamaPegawai)" 
                     value="@bind(adm_user_vm.currentPegawai)"/>
               </hbox>

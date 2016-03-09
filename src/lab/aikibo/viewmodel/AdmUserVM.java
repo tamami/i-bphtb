@@ -82,6 +82,10 @@ public class AdmUserVM {
 		enBtnBaru = true;
 		enBtnSimpan = true;
 		enBtnBatal = true;
+		
+		// pengecualian : dibutuhkan saat init aplikasi di awal saja
+		// setelah user admin terbentuk, harap dijadikan comment;
+		getEditingButton();
 	}
 	
 	private void getEditingButton() {
