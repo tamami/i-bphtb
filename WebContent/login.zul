@@ -1,0 +1,2 @@
+<!-- it is login page, no authentication protection and use anonymous template -->
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template-anonymous.zul"?>

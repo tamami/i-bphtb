@@ -13,6 +13,9 @@ import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.util.Clients;
 
+import lab.aikibo.manager.UserManager;
+import lab.aikibo.util.Encrypt;
+
 public class AuthenticationServiceImpl implements AuthenticationService, Serializable {
 
 	private static final long serialVersionUID = -1845014252906733747L;
@@ -46,7 +49,7 @@ public class AuthenticationServiceImpl implements AuthenticationService, Seriali
 					return false;
 				} else {
 					try {
-						if(pwd.equals(Encrypt.getEncrypted2(password))) {
+						if(pwd.equals(Encrypt.getEncrypted(password))) {
 							Session session = Sessions.getCurrent();
 							UserCredential cre = new UserCredential(nmLogin, userManager.getNip(nmLogin));
 							session.setAttribute("userCredential", cre);
