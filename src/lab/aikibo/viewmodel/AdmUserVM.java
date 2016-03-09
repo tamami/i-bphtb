@@ -51,6 +51,7 @@ public class AdmUserVM {
 	
 	
 	@Init
+	@NotifyChange({"daftarLogin","currentLogin"})
 	public void init() {
 		um = new UserManager();
 		pm = new PegawaiManager();

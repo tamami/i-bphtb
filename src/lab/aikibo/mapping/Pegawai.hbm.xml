@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+  SYSTEM "classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="lab.aikibo.entity.Pegawai" table="pegawai">
+    <id name="nip" type="string">
+      <column name="nip" />
+    </id>
+    <property name="nmPegawai" type="string">
+      <column name="nama" />
+    </property>
+  </class>
+</hibernate-mapping>

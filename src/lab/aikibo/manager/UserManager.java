@@ -94,13 +94,16 @@ public class UserManager {
 		return list;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<String> getListUserInString() {
-		List<DatLogin> list;
-		list = getListUser();
-		List<String> result = new LinkedList<String>();
-		for(int i=0; i<result.size(); i++) {
-			result.add(list.get(i).getNmLogin());
-		}
+		List<String> result;
+		
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		String sql = "select nmLogin from DatLogin";
+		Query query = session.createQuery(sql);
+		result = query.list();
+		
 		return result;
 	}
 	
