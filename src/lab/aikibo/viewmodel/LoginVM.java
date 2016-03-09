@@ -37,11 +37,14 @@ public class LoginVM implements Serializable {
 			Clients.showNotification("Silahkan isi nama pengguna dan kata kuncinya dulu.");
 			return;
 		} else {
-			//if(authService.login(username, password)) {
-		    if(authService.loginDummy(username, password)) {
+			if(authService.login(username, password)) {
+			// pengecualian: digunakan saat akan inisialisasi user saja
+		    //if(authService.loginDummy(username, password)) {
 				Executions.sendRedirect("/index.zul");
+				Clients.showNotification("Selamat datang");
 				return;
 			} else {
+				Clients.showNotification("Nama Pengguna belum terdaftar atau password salah");
 				return;
 			}
 		}

@@ -85,7 +85,7 @@ public class AdmUserVM {
 		
 		// pengecualian : dibutuhkan saat init aplikasi di awal saja
 		// setelah user admin terbentuk, harap dijadikan comment;
-		getEditingButton();
+		//getEditingButton();
 	}
 	
 	private void getEditingButton() {
@@ -190,6 +190,8 @@ public class AdmUserVM {
 			"enBtnHapus","enBtnBaru","enBtnSimpan","enBtnBatal"})
 	public void simpanClick() {
 		if(verifikasiData()) {
+		// pengecualian: ini dipake saat init user pertama kali saja
+		//if(false) {
 			DatLogin data = um.getUserByNip(currentNip);
 			try {
 				data.setPassword(Encrypt.getEncrypted(currentPassBaru));
@@ -226,6 +228,37 @@ public class AdmUserVM {
 			Clients.showNotification("Data telah disimpan");
 			clear();
 			getDefaultButton();
+		} else {
+			Clients.showNotification("Data tidak ada dalam basis data");
+			
+			// pengecualian: ini digunakan untuk inisialisasi user db saja
+			// jadi komentar setelah membuat user baru
+			/*
+			DatLogin newData = new DatLogin();
+			newData.setNip(currentNip);
+			newData.setNmLogin(currentPengguna);
+			try {
+				newData.setPassword(Encrypt.getEncrypted(currentPassBaru));
+			} catch (InvalidKeyException e) {
+				e.printStackTrace();
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			} catch (NoSuchPaddingException e) {
+				e.printStackTrace();
+			} catch (InvalidAlgorithmParameterException e) {
+				e.printStackTrace();
+			} catch (IllegalBlockSizeException e) {
+				e.printStackTrace();
+			} catch (BadPaddingException e) {
+				e.printStackTrace();
+			}
+			um.saveOrUpdate(newData);
+			Clients.showNotification("Data telah disimpan.");
+			clear();
+			getDefaultButton();
+			*/
 		}
 	}
 	
