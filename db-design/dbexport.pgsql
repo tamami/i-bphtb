@@ -78,7 +78,9 @@ CREATE TABLE data_wajib_pajak (
     rt_wp character(3),
     rw_wp character(2),
     kelurahan_wp character varying(30),
-    kota_wp character varying(30)
+    kota_wp character varying(30),
+    npwp character(15),
+    thn_pajak character(4)
 );
 
 
@@ -194,11 +196,50 @@ ALTER TABLE pegawai OWNER TO bphtb;
 
 CREATE TABLE ppat (
     kd_ppat numeric(2,0) NOT NULL,
-    nama_ppat character varying(50) NOT NULL
+    nama_ppat character varying(50) NOT NULL,
+    alamat_ppat character varying(200)
 );
 
 
 ALTER TABLE ppat OWNER TO bphtb;
+
+--
+-- Name: ref_jenis_peralihan; Type: TABLE; Schema: public; Owner: bphtb; Tablespace: 
+--
+
+CREATE TABLE ref_jenis_peralihan (
+    kd_jns_peralihan numeric NOT NULL,
+    jns_peralihan character varying(150) NOT NULL
+);
+
+
+ALTER TABLE ref_jenis_peralihan OWNER TO bphtb;
+
+--
+-- Name: ref_npoptkp; Type: TABLE; Schema: public; Owner: bphtb; Tablespace: 
+--
+
+CREATE TABLE ref_npoptkp (
+    kd_npoptkp numeric NOT NULL,
+    thn_peralihan character(4) NOT NULL,
+    kd_jns_peralihan numeric NOT NULL,
+    npoptkp numeric NOT NULL
+);
+
+
+ALTER TABLE ref_npoptkp OWNER TO bphtb;
+
+--
+-- Name: ref_status_berkas; Type: TABLE; Schema: public; Owner: bphtb; Tablespace: 
+--
+
+CREATE TABLE ref_status_berkas (
+    kd_status numeric(2,0) NOT NULL,
+    status_berkas character varying(30) NOT NULL
+);
+
+
+ALTER TABLE ref_status_berkas OWNER TO bphtb;
 
 --
 -- Name: status; Type: TABLE; Schema: public; Owner: bphtb; Tablespace: 
@@ -234,8 +275,8 @@ COPY data_peralihan (kd_propinsi, kd_dati2, kd_kecamatan, kd_kelurahan, kd_blok,
 -- Data for Name: data_wajib_pajak; Type: TABLE DATA; Schema: public; Owner: bphtb
 --
 
-COPY data_wajib_pajak (wp_id, nama_wp, jalan_wp, blok_kav_no_wp, rt_wp, rw_wp, kelurahan_wp, kota_wp) FROM stdin;
-1	TRIMULYO	RANDUSANGA KULON	\N	002	01	RANDUSANGA KULON	BREBES
+COPY data_wajib_pajak (wp_id, nama_wp, jalan_wp, blok_kav_no_wp, rt_wp, rw_wp, kelurahan_wp, kota_wp, npwp, thn_pajak) FROM stdin;
+1	TRIMULYO	RANDUSANGA KULON	\N	002	01	RANDUSANGA KULON	BREBES	\N	\N
 \.
 
 
@@ -608,7 +649,31 @@ COPY pegawai (nip, nama) FROM stdin;
 -- Data for Name: ppat; Type: TABLE DATA; Schema: public; Owner: bphtb
 --
 
-COPY ppat (kd_ppat, nama_ppat) FROM stdin;
+COPY ppat (kd_ppat, nama_ppat, alamat_ppat) FROM stdin;
+\.
+
+
+--
+-- Data for Name: ref_jenis_peralihan; Type: TABLE DATA; Schema: public; Owner: bphtb
+--
+
+COPY ref_jenis_peralihan (kd_jns_peralihan, jns_peralihan) FROM stdin;
+\.
+
+
+--
+-- Data for Name: ref_npoptkp; Type: TABLE DATA; Schema: public; Owner: bphtb
+--
+
+COPY ref_npoptkp (kd_npoptkp, thn_peralihan, kd_jns_peralihan, npoptkp) FROM stdin;
+\.
+
+
+--
+-- Data for Name: ref_status_berkas; Type: TABLE DATA; Schema: public; Owner: bphtb
+--
+
+COPY ref_status_berkas (kd_status, status_berkas) FROM stdin;
 \.
 
 
@@ -690,6 +755,30 @@ ALTER TABLE ONLY pegawai
 
 ALTER TABLE ONLY ppat
     ADD CONSTRAINT ppat_pkey PRIMARY KEY (kd_ppat);
+
+
+--
+-- Name: ref_jenis_peralihan_pkey; Type: CONSTRAINT; Schema: public; Owner: bphtb; Tablespace: 
+--
+
+ALTER TABLE ONLY ref_jenis_peralihan
+    ADD CONSTRAINT ref_jenis_peralihan_pkey PRIMARY KEY (kd_jns_peralihan);
+
+
+--
+-- Name: ref_npoptkp_pkey; Type: CONSTRAINT; Schema: public; Owner: bphtb; Tablespace: 
+--
+
+ALTER TABLE ONLY ref_npoptkp
+    ADD CONSTRAINT ref_npoptkp_pkey PRIMARY KEY (kd_npoptkp);
+
+
+--
+-- Name: ref_status_berkas_pkey; Type: CONSTRAINT; Schema: public; Owner: bphtb; Tablespace: 
+--
+
+ALTER TABLE ONLY ref_status_berkas
+    ADD CONSTRAINT ref_status_berkas_pkey PRIMARY KEY (kd_status);
 
 
 --
