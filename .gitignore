@@ -1,2 +1,2 @@
 src/hibernate.cfg.xml
-build
+build/*
