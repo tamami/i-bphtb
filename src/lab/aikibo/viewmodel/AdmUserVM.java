@@ -131,13 +131,22 @@ public class AdmUserVM {
 	
 	@Command
 	@NotifyChange({"roTbNip","roTbNamaUser","roTbPassPengubah","roTbPassBaru",
-		"roTbPassBaruConfirm","enBtnUbah","enBtnHapus","enBtnBaru","enBtnSimpan","enBtnBatal"})
+		"roTbPassBaruConfirm","enBtnUbah","enBtnHapus","enBtnBaru","enBtnSimpan","enBtnBatal",
+		"currentLogin","currentNip","currentPassBaru","currentPassBaruConfirm",
+		"currentPassPengubah","currentPegawai","currentPengguna"})
 	public void baruClick() {
 		roTbNip = false;
 		roTbNamaUser = false;
 		roTbPassPengubah = false;
 		roTbPassBaru = false;
 		roTbPassBaruConfirm = false;
+		currentLogin = new String();
+		currentNip = new String();
+		currentPassBaru = new String();
+		currentPassBaruConfirm = new String();
+		currentPassPengubah = new String();
+		currentPegawai = new String();
+		currentPengguna = new String();
 		getConfirmButton();
 		
 		status = StatusEntry.DATA_BARU;
