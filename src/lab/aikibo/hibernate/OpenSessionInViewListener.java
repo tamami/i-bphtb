@@ -17,6 +17,7 @@ public class OpenSessionInViewListener implements ExecutionInit, ExecutionCleanu
 		if(parent == null) {
 			if(errs == null || errs.isEmpty()) {
 				log.debug("Committing the database transaction: " + exec);
+				//ini juga perlu disesuaikan untuk koneksi ke 2 db sekaligus
 				HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
 			} else {
 				final Throwable ex = (Throwable) errs.get(0);
@@ -29,10 +30,12 @@ public class OpenSessionInViewListener implements ExecutionInit, ExecutionCleanu
 	public void init(Execution exec, Execution parent) throws Exception {
 		if(parent == null) {
 			log.debug("Starting a database transaction: " + exec);
+			//baris ini perlu disesuaikan untuk koneksi ke 2 db sekaligus
 			HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
 		}
 	}
 	
+	// isinya perlu disesuaikan untuk koneksi ke 2 db sekaligus
 	private void rollback(Execution exec, Throwable ex) {
 		try {
 			if(HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
