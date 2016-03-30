@@ -25,6 +25,7 @@ public class UserManager {
 	}
 	
 	public boolean isAnyUser(String username) {
+		// pada saat pembentukan session, perlu dipastikan apakah menggunakan sessionOracle atau sessionPostgres
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		String sql = "select nmLogin from DatLogin where nmLogin = :username";
