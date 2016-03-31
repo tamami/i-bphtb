@@ -19,6 +19,8 @@ public class OpenSessionInViewListener implements ExecutionInit, ExecutionCleanu
 				log.debug("Committing the database transaction: " + exec);
 				//ini juga perlu disesuaikan untuk koneksi ke 2 db sekaligus
 				HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
+				HibernateUtil.getSessionOracle().getCurrentSession().getTransaction().commit();
+				HibernateUtil.getSessionPostgres().getCurrentSession().getTransaction().commit();
 			} else {
 				final Throwable ex = (Throwable) errs.get(0);
 				rollback(exec, ex);
@@ -32,6 +34,8 @@ public class OpenSessionInViewListener implements ExecutionInit, ExecutionCleanu
 			log.debug("Starting a database transaction: " + exec);
 			//baris ini perlu disesuaikan untuk koneksi ke 2 db sekaligus
 			HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+			HibernateUtil.getSessionOracle().getCurrentSession().beginTransaction();
+			HibernateUtil.getSessionPostgres().getCurrentSession().beginTransaction();
 		}
 	}
 	
@@ -41,6 +45,8 @@ public class OpenSessionInViewListener implements ExecutionInit, ExecutionCleanu
 			if(HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
 				log.debug("Trying to rollback database transaction after exception: " + ex);
 				HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().rollback();
+				HibernateUtil.getSessionOracle().getCurrentSession().getTransaction().rollback();
+				HibernateUtil.getSessionPostgres().getCurrentSession().getTransaction().rollback();
 			}
 		} catch(Throwable rbEx) {
 			log.error("Could not rollback transaction after exception! Original Exception:\n" + ex, rbEx);
