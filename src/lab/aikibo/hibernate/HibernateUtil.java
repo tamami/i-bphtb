@@ -7,14 +7,14 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
 	
 	private static SessionFactory sessionFactory;
-	//private static SessionFactory sessionOracle;
-	//private static SessionFactory sessionPostgres;
+	private static SessionFactory sessionOracle;
+	private static SessionFactory sessionPostgres;
 	
 	static {
 		try {
 			sessionFactory = new Configuration().configure().buildSessionFactory();
-			//sessionOracle = new Configuration().configure("oracleconfig.cfg.xml").buildSessionFactory();
-			//sessionPostgres = new Configuration().configure("postgresconfig.cfg.xml").buildSessionFactory();
+			sessionOracle = new Configuration().configure("oracleconfig.cfg.xml").buildSessionFactory();
+			sessionPostgres = new Configuration().configure("postgresconfig.cfg.xml").buildSessionFactory();
 		} catch(Throwable e) {
 			throw new ExceptionInInitializerError(e);
 		}
@@ -24,7 +24,7 @@ public class HibernateUtil {
 		return sessionFactory;
 	}
 	
-	/*
+	
 	public static SessionFactory getSessionOracle() {
 	  return sessionOracle;
 	}
@@ -32,6 +32,5 @@ public class HibernateUtil {
 	public static SessionFactory getSessionPostgres() {
 	  return sessionPostgres;
 	}
-	 */
-
+	
 }
