@@ -6,6 +6,7 @@ public class MenuVM {
 	
 	private boolean konfigurasiMn;
 	private boolean admUserMn;
+	private boolean admPegawaiMn;
 	
 	@Init
 	public void init() {
@@ -17,6 +18,7 @@ public class MenuVM {
 	private void setAllTrue() {
 		setKonfigurasiMn(true);
 		setAdmUserMn(true);
+		setAdmPegawaiMn(true);
 	}
 
 	public boolean isKonfigurasiMn() {
@@ -33,6 +35,14 @@ public class MenuVM {
 
 	public void setAdmUserMn(boolean admUserMn) {
 		this.admUserMn = admUserMn;
+	}
+	
+	public boolean isAdmPegawaiMn() {
+		return admPegawaiMn;
+	}
+	
+	public void setAdmPegawaiMn(boolean admPegawaiMn) {
+		this.admPegawaiMn = admPegawaiMn;
 	}
 
 }

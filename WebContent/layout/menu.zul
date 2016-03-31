@@ -5,6 +5,8 @@
       <menupopup>
         <menuitem id="admUser" label="Administrasi User" if="${menuController.admUserMn }"
             onClick="@global-command('callAdmUser')" />
+        <menuitem id="admPegawai" label="Administrasi Pegawai" if="${menuController.admPegawaiMn }"
+            onClick="@globa-command('callAdmPegawai')" />
       </menupopup>
     </menu>
   </menubar>
