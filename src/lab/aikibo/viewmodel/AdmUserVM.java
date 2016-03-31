@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.crypto.BadPaddingException;
@@ -60,14 +61,23 @@ public class AdmUserVM {
 	}
 	
 	private void clear() {
-		setDaftarLogin(um.getListUserInString());
+		// seharusnya ada filter, kalo admin baru semuanya muncul, kalo ga hanya user
+		// bersangkutan yang muncul.
+		if(isAdmin()) {
+		  setDaftarLogin(um.getListUserInString());
+		  getAdminButton();
+		} else {
+	        List<String> data = new LinkedList<String>();
+			data.add(( (UserCredential) Sessions.getCurrent().getAttribute("userCredential")).getNama());
+			setDaftarLogin(data);
+			getDefaultButton();
+		}
 		roTbNip = true;
 		roTbNamaPegawai = true;
 		roTbNamaUser = true;
 		roTbPassPengubah = true;
 		roTbPassBaru = true;
-		roTbPassBaruConfirm = true;
-		//getDefaultButton();
+		roTbPassBaruConfirm = true;		
 		currentLogin = new String();
 		currentNip = new String();
 		currentPegawai = new String();
@@ -77,18 +87,34 @@ public class AdmUserVM {
 		currentPassBaruConfirm = new String();
 	}
 	
+	// cek otoritas user
+	private boolean isAdmin() {
+		UserCredential cre = (UserCredential) Sessions.getCurrent().getAttribute("userCredential");
+		if(cre.getNama() == "ADMIN") return true;
+		else return false;
+	}
+	
 	private void getDefaultButton() {
 		enBtnUbah = true;
 		enBtnHapus = true;
-		enBtnBaru = true;
-		enBtnSimpan = true;
-		enBtnBatal = true;
+		enBtnBaru = false;
+		enBtnSimpan = false;
+		enBtnBatal = false;
 		
 		// pengecualian : dibutuhkan saat init aplikasi di awal saja
 		// setelah user admin terbentuk, harap dijadikan comment;
 		//getEditingButton();
 	}
 	
+	private void getAdminButton() {
+		enBtnUbah = true;
+		enBtnHapus = true;
+		enBtnBaru = true;
+		enBtnSimpan = false;
+		enBtnBatal = false;
+	}
+	
+	// berlaku setelah form editing aktif
 	private void getEditingButton() {
 		enBtnUbah = false;
 		enBtnHapus = false;
