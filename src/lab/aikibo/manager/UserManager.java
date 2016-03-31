@@ -26,7 +26,8 @@ public class UserManager {
 	
 	public boolean isAnyUser(String username) {
 		// pada saat pembentukan session, perlu dipastikan apakah menggunakan sessionOracle atau sessionPostgres
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Session session = HibernateUtil.getSessionPostgres().getCurrentSession();
 		session.beginTransaction();
 		String sql = "select nmLogin from DatLogin where nmLogin = :username";
 		try {
@@ -51,7 +52,8 @@ public class UserManager {
 	public String getPassword(String username) {
 		String password;
 		if(isAnyUser(username)) {
-			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			Session session = HibernateUtil.getSessionPostgres().getCurrentSession();
 			session.beginTransaction();
 			String sql = "select password from DatLogin where nmLogin = :username";
 			Query query = session.createQuery(sql);
@@ -70,7 +72,8 @@ public class UserManager {
 	public String getNip(String username) {
 		String nip;
 		if(isAnyUser(username)) {
-			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			Session session = HibernateUtil.getSessionPostgres().getCurrentSession();
 			session.beginTransaction();
 			String sql = "select nip from DatLogin where nmLogin = :username";
 			Query query = session.createQuery(sql);
@@ -89,7 +92,8 @@ public class UserManager {
 	@SuppressWarnings("unchecked")
 	public List<DatLogin> getListUser() {
 		List<DatLogin> list;
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Session session = HibernateUtil.getSessionPostgres().getCurrentSession();
 		session.beginTransaction();
 		list = session.createQuery("from DatLogin").list();
 		return list;
@@ -99,7 +103,8 @@ public class UserManager {
 	public List<String> getListUserInString() {
 		List<String> result;
 		
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Session session = HibernateUtil.getSessionPostgres().getCurrentSession();
 		session.beginTransaction();
 		String sql = "select nmLogin from DatLogin";
 		Query query = session.createQuery(sql);
@@ -111,7 +116,8 @@ public class UserManager {
 	@SuppressWarnings("unchecked")
 	public DatLogin getUserByNip(String nip) {
 		List<DatLogin> list;
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Session session = HibernateUtil.getSessionPostgres().getCurrentSession();
 		session.beginTransaction();
 		Criteria criteria = session.createCriteria(DatLogin.class);
 		criteria.add(Restrictions.eq("nip", nip));
@@ -124,7 +130,8 @@ public class UserManager {
 	}
 	
 	public void saveOrUpdate(DatLogin user) {
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Session session = HibernateUtil.getSessionPostgres().getCurrentSession();
 		session.saveOrUpdate(user);
 		Transaction tx = session.beginTransaction();
 		tx.commit();

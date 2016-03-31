@@ -13,7 +13,8 @@ public class PegawaiManager {
 	
 	public String getNamaByNipLama(String nip) {
 		// pada saat pemanggilan session, maka perlu dituju apakah sessionOracle atau sessionPostgres
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Session session = HibernateUtil.getSessionPostgres().getCurrentSession();
 		session.beginTransaction();
 		Criteria criteria = session.createCriteria(Pegawai.class);
 		criteria.add(Restrictions.eq("nip", nip));

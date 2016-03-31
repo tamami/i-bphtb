@@ -25,13 +25,13 @@ public class UserManagerTest {
 	@Test
 	public void testJumlahListUser() {
 		dataLogin = um.getListUser();
-		assertEquals(1, dataLogin.size());
+		assertEquals(0, dataLogin.size());
 	}
 	
 	@Test
 	public void testJumlahListUserString() {
 		data = um.getListUserInString();
-		assertEquals(1, data.size());
+		assertEquals(0, data.size());
 	}
 
 }

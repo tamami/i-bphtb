@@ -6,13 +6,13 @@ import org.hibernate.cfg.Configuration;
 /* Jika berhubungan dengan 2 database maka perlu 2 sessionFactory */
 public class HibernateUtil {
 	
-	private static SessionFactory sessionFactory;
+	//private static SessionFactory sessionFactory;
 	private static SessionFactory sessionOracle;
 	private static SessionFactory sessionPostgres;
 	
 	static {
 		try {
-			sessionFactory = new Configuration().configure().buildSessionFactory();
+			//sessionFactory = new Configuration().configure().buildSessionFactory();
 			sessionOracle = new Configuration().configure("oracleconfig.cfg.xml").buildSessionFactory();
 			sessionPostgres = new Configuration().configure("postgresconfig.cfg.xml").buildSessionFactory();
 		} catch(Throwable e) {
@@ -20,9 +20,10 @@ public class HibernateUtil {
 		}
 	}
 	
+	/*
 	public static SessionFactory getSessionFactory() {
 		return sessionFactory;
-	}
+	}*/
 	
 	
 	public static SessionFactory getSessionOracle() {
