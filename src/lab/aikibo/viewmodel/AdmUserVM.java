@@ -67,7 +67,7 @@ public class AdmUserVM {
 		roTbPassPengubah = true;
 		roTbPassBaru = true;
 		roTbPassBaruConfirm = true;
-		getDefaultButton();
+		//getDefaultButton();
 		currentLogin = new String();
 		currentNip = new String();
 		currentPegawai = new String();
