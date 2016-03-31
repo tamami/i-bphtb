@@ -1,3 +1,4 @@
 src/hibernate.cfg.xml
 src/oracleconfig.cfg.xml
+src/postgresconfig.cfg.xml
 build/*
