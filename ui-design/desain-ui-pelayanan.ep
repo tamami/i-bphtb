@@ -1421,4 +1421,44 @@
             <path style="stroke-width: 1px; stroke: rgb(199, 197, 178); visibility: visible;" transform="translate(0.5,1.5)" p:name="line1" id="7a512aee03e34005b821683406a96f1e" d="M 142 2 L 142 15"/>
             <path style="stroke-width: 1px; stroke: rgb(255, 255, 255); visibility: visible;" transform="translate(0.5,1.5)" p:name="line2" id="c28816f426404b6e95a1d1483ddd4709" d="M 143 2 L 143 15"/>
             <path style="stroke: none; fill: rgb(172, 168, 153); visibility: hidden; display: none;" d="M 0,0 L 9,0 L 4.5,5 z" p:name="sorting" id="291e4e1ea8d64f1b9239ee115d9c1956" transform="translate(88,8) scale(1,1)"/>
-        </g></g></Content></Page></Pages></Document>
+        </g></g></Content></Page><Page><Properties><Property name="name">ui-pengaturan-menu</Property><Property name="id">1459667461608_6647</Property><Property name="width">975</Property><Property name="height">511</Property><Property name="dimBackground"/><Property name="transparentBackground">true</Property><Property name="backgroundColor">#FFFFFFFF</Property><Property name="background">transparent</Property></Properties><Content><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.WindowsXP.Widgets:Frame" id="974c4b11ade149edb4a94f0739cca8dc" transform="matrix(1,0,0,1,16,16)"><p:metadata><p:property name="box"><![CDATA[592,480]]></p:property><p:property name="withClose"><![CDATA[true]]></p:property><p:property name="withMax"><![CDATA[true]]></p:property><p:property name="withMin"><![CDATA[true]]></p:property><p:property name="withShadow"><![CDATA[false]]></p:property><p:property name="titleText"><![CDATA[Pengaturan Menu]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textFont"><![CDATA[Trebuchet MS|bold|normal|13px|none]]></p:property><p:property name="textAlign"><![CDATA[0,1]]></p:property><p:property name="withRoomForIcon"><![CDATA[false]]></p:property></p:metadata>
+            <defs>
+                <pattern patternUnits="userSpaceOnUse" x="0" y="0" width="1" height="29" p:name="titlePattern" id="1d6139c8f76f4106989232b7519c8822">
+                    <image image-rendering="optimizeQuality" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAdCAYAAABrAQZpAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gBEAohNhFyT2EAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAXklEQVQI123KsRHCMBAAwfuTRAW04z5cOjEhjB1AYMaW/CSEJBstzM90mq64HuDtDvJ+4dgOpO/ISCRPJETgDw0pgVCQUjFawaRiVDAu7ZejBmZPjLPj+CSyPDC2hS8XER5NU5DfKgAAAABJRU5ErkJggg==" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="1" height="29"/>
+                </pattern>
+                <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAdCAYAAACXFC2jAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A                 /wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gBEAoOIhm0o3EAAAAZdEVYdENv                 bW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAABW0lEQVQoz3WSS0sDQRCEv+555Ama3ASPXrwK                 Qn6Fv88fqKAo+EpC1t3Z9rCzjyRrw8AyXdPVVbXCwyNnle5NxAHgh/dSbwwgXN8gixnLqfYAqTcm                 qyv8fEEVEkFlMOHnzuxije2/KKcKBRTlB8URRfkG8zW22/acforydGvM1s1FUfYHoDqgALw8wz4h                 xf5MkPL9zP8VULYhj1OkYGTCoGqdNB+TAATwLgMsgEZwAinCrwcc1IqiK4gBqmyLExA9obAJhHm2                 NDdNzndoghpeueOwiBEmmcK1WcRls2CcggikvAcCXkconIBvmphHsTmEzDQkNI9I60PtO2vxAi7m                 Bx7Ft80IVd9sf7l+h5AgOy3iUBFEQKmqjMv2dis4xAlKmY5EtK9H0+xSNUOqNA6wwURL1iqvj0GH                 guQ8zsqTLHa7Rol3kCClMAB87uASeH2H6JBO5mnFLNUMM/gDasVk7m2cE34AAAAASUVORK5CYII=                 " xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="29" p:name="cornerImage" id="e3b90fdf981f494bad5ae86145ebef6b"/>
+
+                <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" p:name="closeButtonFill" id="dd427222b8c245cbbfa44ef825cbe9aa">
+                    <stop style="stop-color:#EFA390;stop-opacity:1" offset="0"/>
+                    <stop style="stop-color:#E03802;stop-opacity:1" offset="1"/>
+                </linearGradient>
+                <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" p:name="otherButtonFill" id="0d174a6f886440faaa4b775d2f0b7062">
+                    <stop style="stop-color:#9AB7FA;stop-opacity:1" offset="0"/>
+                    <stop style="stop-color:#0045D3;stop-opacity:1" offset="1"/>
+                </linearGradient>
+                <filter height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198" p:name="shadingFilter" id="988f45a5ee2845429388e3aeace4d228">
+                    <feGaussianBlur stdDeviation="1.3325" in="SourceAlpha"/>
+                </filter>
+            </defs>
+            <rect x="0" y="5" width="592" height="475" transform="translate(2, 2)" p:filter="url(#988f45a5ee2845429388e3aeace4d228)" style="stroke: none; opacity: 0.6; fill-opacity: 1; fill: rgb(0, 0, 0); visibility: hidden; display: none;" p:name="bgRect" id="74815caf341e4745a1b5fd190651eb97"/>
+            <rect x="1.5" y="25.5" style="fill: #ECE9D8; stroke: #0055E5; stroke-width: 3px;" p:name="bodyRect" id="e6eaacd7a460437a81234618404906c0" width="589" height="453"/>
+            <use xlink:href="#e3b90fdf981f494bad5ae86145ebef6b" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"/>
+            <rect x="8" y="0" width="576" height="29" style="stroke: none; fill: url(#1d6139c8f76f4106989232b7519c8822);" p:name="titleRect" id="62afe98e48bb419daa599f2f060a41c3"/>
+            <use xlink:href="#e3b90fdf981f494bad5ae86145ebef6b" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" transform="translate(592,0) scale(-1, 1)" p:name="titleCorner" id="76358804585440d09cfe98dfc1cbb5ff"/>
+            <text x="31.5" y="17.25" style="font-size: 13px; font-style: normal; font-weight: bold; text-align: left; text-anchor: start; dominant-baseline: central; fill: rgb(10, 24, 131); font-family: Trebuchet MS; fill-opacity: 1; text-decoration: none;" xml:space="preserve" p:name="shadowText" id="6626f56045114498bba2eafaeff4f344" transform="translate(-22,-2)">Pengaturan Menu</text>
+            <text x="31.5" y="17.25" style="font-size: 13px; font-style: normal; font-weight: bold; text-align: left; text-anchor: start; dominant-baseline: central; fill: rgb(255, 255, 255); font-family: Trebuchet MS; fill-opacity: 1; text-decoration: none;" xml:space="preserve" p:name="text" id="9e24b2ca755147b9820fea45534f8fbf" transform="translate(-23,-3)">Pengaturan Menu</text>
+            <g p:name="closeButton" id="2aefbda679fc49a59121b1314d4292e6" transform="translate(565,0)" style="visibility: visible;">
+                <rect x="0.5" y="5.5" width="20" height="20" rx="2" ry="2" style="stroke: #ffffff; stroke-width: 1px; fill: url(#dd427222b8c245cbbfa44ef825cbe9aa);"/>
+                <path d="M 6,11 L 15,20" style="stroke: #ffffff; stroke-width: 2px; fill: none;"/>
+                <path d="M 6,20 L 15,11" style="stroke: #ffffff; stroke-width: 2px; fill: none;"/>
+            </g>
+            <g p:name="maxButton" id="dc638fe1422b4e48a07e314e35cb714f" transform="translate(542,0)" style="visibility: visible;">
+                <rect x="0.5" y="5.5" width="20" height="20" rx="2" ry="2" style="stroke: #ffffff; stroke-width: 1px; fill: url(#0d174a6f886440faaa4b775d2f0b7062);"/>
+                <rect x="0" y="0" width="10" height="10" transform="translate(5.5, 10.5)" style="stroke: #ffffff; stroke-width: 1px; fill: none;"/>
+                <path d="M 0,1.5 L 10,1.5" transform="translate(5.5, 10.5)" style="stroke: #ffffff; stroke-width: 2px; fill: none;"/>
+            </g>
+            <g p:name="minButton" id="39229e41a7534cc5ba126f7f37ec8686" transform="translate(519,0)" style="visibility: visible;">
+                <rect x="0.5" y="5.5" width="20" height="20" rx="2" ry="2" style="stroke: #ffffff; stroke-width: 1px; fill: url(#0d174a6f886440faaa4b775d2f0b7062);"/>
+                <path d="M 0,1.5 L 9,1.5" transform="translate(5, 19)" style="stroke: #ffffff; stroke-width: 3px; fill: none;"/>
+            </g>
+        </g></Content></Page></Pages></Document>
