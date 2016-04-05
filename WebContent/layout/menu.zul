@@ -6,7 +6,33 @@
         <menuitem id="admUser" label="Administrasi User" if="${menuController.admUserMn }"
             onClick="@global-command('callAdmUser')" />
         <menuitem id="admPegawai" label="Administrasi Pegawai" if="${menuController.admPegawaiMn }"
-            onClick="@globa-command('callAdmPegawai')" />
+            onClick="@global-command('callAdmPegawai')" />
+        <menuitem id="admPpat" label="Administrasi PPAT" if="${menuController.admPpatMn }"
+            onClick="@global-command('callAdmPpat')" />
+        <menuitem id="admJnsPeralihan" label="Administrasi Jenis Peralihan" if="${menuController.admJnsPeralihanMn }"
+            onClick="@global-command('callAdmJnsPeralihan')" />
+        <menuitem id="admNpoptkp" label="Administrasi NPOPTKP" if="${menuController.admNpoptkpMn }"
+            onClick="@global-command('callAdmNpoptkp')" />
+        <menuitem id="admStatusBerkas" label="Administrasi Status Berkas" if="${menuController.admStatusBerkasMn }"
+            onClick="@global-command('callAdmStatusBerkas')" />
+        <menuitem id="pengaturanMenu" label="Pengaturan Menu" if="${menuController.pengaturanMenuMn }"
+            onClick="@global-command('callPengaturanMenu')" />
+        <menuitem id="konfLaporan" label="Konfigurasi Laporan" if="${menuController.konfLaporanMn }"
+            onClick="@global-command('callKonfigurasiLaporan')" />
+      </menupopup>
+    </menu>
+    <menu id="data" label="Data" if="${menuController.dataMn }">
+      <menupopup>
+        <menuitem id="entryTransaksi" label="Entry Transaksi" if="${menuController.entryTransMn }"
+            onClick="@global-command('callEntryTransaksi')" />
+      </menupopup>
+    </menu>
+    <menu id="laporan" label="Laporan" if="${menuController.laporanMn }">
+      <menupopup>
+        <menuitem id="dataOp" label="Data Objek Pajak" if="${menuController.dataOpMn }"
+            onClick="@global-command('callLaporanDataOp')" />
+        <menuitem id="disposisi" label="Lembar Disposisi" if="${menuController.disposisiMn }"
+            onClick="@global-command('callDisposisi')" />
       </menupopup>
     </menu>
   </menubar>
