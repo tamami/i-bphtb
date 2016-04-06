@@ -9,7 +9,8 @@
         <hbox>
           <label value="Pengguna"/>
           <listbox mold="select" model="@bind(adm_user_vm.daftarLogin)"
-              selectedItem="@bind(adm_user_vm.currentLogin)"/>
+              selectedItem="@bind(adm_user_vm.currentLogin)"
+              focus="true"/>
         </hbox>
       </panelchildren>
     </panel>

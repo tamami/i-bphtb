@@ -14,9 +14,6 @@ import lab.aikibo.services.UserCredential;
 public class AksesManager {
 	
 	public RefAkses getAkses(String user) {
-		org.zkoss.zk.ui.Session sessWeb = Sessions.getCurrent();
-		UserCredential cre = (UserCredential) sessWeb.getAttribute("userCredential");
-		
 		org.hibernate.Session sessHb = HibernateUtil.getSessionPostgres().getCurrentSession();
 		sessHb.beginTransaction();
 		Criteria criteria = sessHb.createCriteria(RefAkses.class);

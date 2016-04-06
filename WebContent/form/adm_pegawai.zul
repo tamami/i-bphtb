@@ -1,0 +1,24 @@
+<zk>
+  <window title="Administrasi Pegawai" border="normal" mode="modal"
+      width="500px" height="300px" closable="true"
+      apply="org.zkoss.bind.BindComposer"
+      viewModel="@id('adm_peg_vm') @init('lab.aikibo.viewmodel.AdmPegawaiVM')">
+    <vlayout>
+      <groupbox width="200px">
+        <caption>Identitas</caption>
+        <grid>
+          <columns>
+            <column width="60px"/>
+            <column width="140px"/>
+          </columns>
+          <rows>
+            <row>NIP</row>
+            <row>
+              <textbox value="" />
+            </row>
+          </rows>
+        </grid>
+      </groupbox>
+    </vlayout>
+  </window>
+</zk>
