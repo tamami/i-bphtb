@@ -1,11 +1,29 @@
 package lab.aikibo.manager;
 
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
+import org.zkoss.zk.ui.Session;
+import org.zkoss.zk.ui.Sessions;
+
 import lab.aikibo.entity.RefAkses;
+import lab.aikibo.hibernate.HibernateUtil;
+import lab.aikibo.services.UserCredential;
 
 public class AksesManager {
 	
 	public RefAkses getAkses(String user) {
-		return null; // ga bisa akses dari rumah.. db-nya udah di setting 2
+		org.zkoss.zk.ui.Session sessWeb = Sessions.getCurrent();
+		UserCredential cre = (UserCredential) sessWeb.getAttribute("userCredential");
+		
+		org.hibernate.Session sessHb = HibernateUtil.getSessionPostgres().getCurrentSession();
+		sessHb.beginTransaction();
+		Criteria criteria = sessHb.createCriteria(RefAkses.class);
+		criteria.add(Restrictions.eq("nmLogin", user));
+		List<RefAkses> dataRefAkses = criteria.list();
+		if(dataRefAkses.size() == 1) return dataRefAkses.get(0);
+		else return null;
 	}
 
 }
