@@ -14,10 +14,47 @@
           <rows>
             <row>NIP</row>
             <row>
-              <textbox value="" />
+              <textbox value="">
+                <attribute name="onOK">
+                  <![CDATA[nama.focus();]]>
+                </attribute>
+              </textbox>
+            </row>
+          </rows>
+          <rows>
+            <row>Nama</row>
+            <row>
+              <textbox value="">
+                <attribute name="onOK">
+                  <![CDATA[btnSimpan.focus();]]>
+                </attribute>
+              </textbox>
             </row>
           </rows>
         </grid>
+        <hbox>
+          <button label="Simpan" onClick="" />
+          <button label="Hapus" onClick="" />
+          <button label="Batal" onClick="" />
+        </hbox>
+      </groupbox>
+      <groupbox>
+        <caption>Data</caption>
+        <listbox id="box" model=""
+            selectedItem=""
+            style="overflow:auto; font-size:small" multiple="true"
+            mold="paging" autopaging="true">
+          <listhead>
+            <listheader label="NIP" width="100px" />
+            <listheader label="NAMA" />
+          </listhead>
+          <template name="model" var="data">
+            <listitem>
+              <listcell label="@load(data.nip)" />
+              <listcell label="@load(data.nama)" />
+            </listitem>
+          </template>
+        </listbox>
       </groupbox>
     </vlayout>
   </window>
