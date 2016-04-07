@@ -14,7 +14,7 @@
           <rows>
             <row>NIP</row>
             <row>
-              <textbox value="">
+              <textbox value="@bind(adm_peg_vm.currentPegawai.nip)">
                 <attribute name="onOK">
                   <![CDATA[nama.focus();]]>
                 </attribute>
@@ -24,7 +24,7 @@
           <rows>
             <row>Nama</row>
             <row>
-              <textbox value="">
+              <textbox value="@bind(adm_peg_vm.currentPegawai.nmPegawai)">
                 <attribute name="onOK">
                   <![CDATA[btnSimpan.focus();]]>
                 </attribute>
@@ -33,15 +33,15 @@
           </rows>
         </grid>
         <hbox>
-          <button label="Simpan" onClick="" />
-          <button label="Hapus" onClick="" />
-          <button label="Batal" onClick="" />
+          <button label="Simpan" onClick="@command('save')" />
+          <button label="Hapus" onClick="@command('delete')" />
+          <button label="Batal" onClick="@command('clear')" />
         </hbox>
       </groupbox>
       <groupbox>
         <caption>Data</caption>
-        <listbox id="box" model=""
-            selectedItem=""
+        <listbox id="box" model="@bind(adm_peg_vm.daftarPegawai)"
+            selectedItem="@bind(adm_peg_vm.currentPegawai)"
             style="overflow:auto; font-size:small" multiple="true"
             mold="paging" autopaging="true">
           <listhead>
