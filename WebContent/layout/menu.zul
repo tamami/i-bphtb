@@ -17,7 +17,7 @@
             onClick="@global-command('callAdmStatusBerkas')" />
         <menuitem id="pengaturanMenu" label="Pengaturan Menu" if="${menuController.pengaturanMenuMn }"
             onClick="@global-command('callPengaturanMenu')" />
-        <menuitem id="konfLaporan" label="Konfigurasi Laporan" if="${menuController.konfLaporanMn }"
+        <menuitem id="konfLaporan" label="Konfigurasi Laporan" if="${menuController.konfigLaporanMn }"
             onClick="@global-command('callKonfigurasiLaporan')" />
       </menupopup>
     </menu>
