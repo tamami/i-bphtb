@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+    SYSTEM "classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="lab.aikibo.entity.RefAkses" table="ref_akses">
+    <id name="nmLogin" type="string">
+      <column name="nm_login" />
+    </id>
+    <property name="mnAdmJnsPeralihan" type="boolean">
+      <column name="mn_adm_jns_peralihan" />
+    </property>
+    <property name="mnAdmNpoptkp" type="boolean">
+      <column name="mn_adm_npoptkp" />
+    </property>
+    <property name="mnAdmPegawai" type="boolean">
+      <column name="mn_adm_pegawai" />
+    </property>
+    <property name="mnAdmPpat" type="boolean">
+      <column name="mn_adm_ppat" />
+    </property>
+    <property name="mnAdmStatusBerkas" type="boolean">
+      <column name="mn_adm_status_berkas" />
+    </property>
+    <property name="mnAdmUser" type="boolean">
+      <column name="mn_adm_user" />
+    </property>
+    <property name="mnData" type="boolean" >
+      <column name="mn_data" />
+    </property>
+    <property name="mnEntryTransaksi" type="boolean">
+      <column name="mn_entry_transaksi" />
+    </property>
+    <property name="mnKonfigurasi" type="boolean">
+      <column name="mn_konfigurasi" />
+    </property>
+    <property name="mnKonfigurasiLaporan" type="boolean">
+      <column name="mn_konfigurasi_laporan" />
+    </property>
+    <property name="mnLaporan" type="boolean">
+      <column name="mn_laporan" />
+    </property>
+    <property name="mnLembarDispo" type="boolean">
+      <column name="mn_lembar_dispo" />
+    </property>
+    <property name="mnSkNjop" type="boolean">
+      <column name="mn_sk_njop" />
+    </property>
+    <property name="pengaturanMn" type="boolean">
+      <column name="pengaturan_mn" />
+    </property>
+  </class>
+</hibernate-mapping>
