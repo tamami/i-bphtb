@@ -23,7 +23,7 @@
     </menu>
     <menu id="data" label="Data" if="${menuController.dataMn }">
       <menupopup>
-        <menuitem id="entryTransaksi" label="Entry Transaksi" if="${menuController.entryTransMn }"
+        <menuitem id="entryTransaksi" label="Entry Transaksi" if="${menuController.entryTransMn }" <!-- perlu perbaikan, sesuaikan nama propertynya di MenuVM -->
             onClick="@global-command('callEntryTransaksi')" />
       </menupopup>
     </menu>
