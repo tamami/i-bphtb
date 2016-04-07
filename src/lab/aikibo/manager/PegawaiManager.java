@@ -23,5 +23,12 @@ public class PegawaiManager {
 		if(data.size() == 1) return data.get(0).getNmPegawai();
 		else return "";
 	}
+	
+	public List<Pegawai> getListPegawai() {
+		Session session = HibernateUtil.getSessionPostgres().getCurrentSession();
+		session.beginTransaction();
+		List<Pegawai> result = (List<Pegawai>) session.createQuery("from Pegawai").list();
+		return result;
+	}
 
 }
