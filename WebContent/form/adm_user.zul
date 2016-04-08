@@ -39,7 +39,7 @@
             </row>
             <row>
               Password Pengubah
-              <textbox type="password" readonly="@bind(adm_user_vm.roTbPassPengubah)"
+              <textbox id="pass" type="password" readonly="@bind(adm_user_vm.roTbPassPengubah)"
                   value="@bind(adm_user_vm.currentPassPengubah)"/>
             </row>
             <row>
