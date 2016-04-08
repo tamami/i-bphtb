@@ -23,15 +23,15 @@
     </menu>
     <menu id="data" label="Data" if="${menuController.dataMn }">
       <menupopup>
-        <menuitem id="entryTransaksi" label="Entry Transaksi" if="${menuController.entryTransMn }" <!-- perlu perbaikan, sesuaikan nama propertynya di MenuVM -->
+        <menuitem id="entryTransaksi" label="Entry Transaksi" if="${menuController.entryTransaksiMn }" 
             onClick="@global-command('callEntryTransaksi')" />
       </menupopup>
     </menu>
     <menu id="laporan" label="Laporan" if="${menuController.laporanMn }">
       <menupopup>
-        <menuitem id="dataOp" label="Data Objek Pajak" if="${menuController.dataOpMn }"
+        <menuitem id="dataOp" label="Data Objek Pajak" if="${menuController.dataMn }"
             onClick="@global-command('callLaporanDataOp')" />
-        <menuitem id="disposisi" label="Lembar Disposisi" if="${menuController.disposisiMn }"
+        <menuitem id="disposisi" label="Lembar Disposisi" if="${menuController.lembarDispoMn }"
             onClick="@global-command('callDisposisi')" />
       </menupopup>
     </menu>

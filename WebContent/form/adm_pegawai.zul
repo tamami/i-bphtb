@@ -4,27 +4,25 @@
       apply="org.zkoss.bind.BindComposer"
       viewModel="@id('adm_peg_vm') @init('lab.aikibo.viewmodel.AdmPegawaiVM')">
     <vlayout>
-      <groupbox width="200px">
+      <groupbox width="300px">
         <caption>Identitas</caption>
         <grid>
           <columns>
             <column width="60px"/>
-            <column width="140px"/>
+            <column />
           </columns>
           <rows>
-            <row>NIP</row>
             <row>
-              <textbox value="@bind(adm_peg_vm.currentPegawai.nip)">
+              <label value="NIP" />
+              <textbox id="nip" value="@bind(adm_peg_vm.currentPegawai.nip)">
                 <attribute name="onOK">
                   <![CDATA[nama.focus();]]>
                 </attribute>
               </textbox>
-            </row>
-          </rows>
-          <rows>
-            <row>Nama</row>
+            </row>          
             <row>
-              <textbox value="@bind(adm_peg_vm.currentPegawai.nmPegawai)">
+              <label value="Nama" />
+              <textbox id="nama" value="@bind(adm_peg_vm.currentPegawai.nmPegawai)">
                 <attribute name="onOK">
                   <![CDATA[btnSimpan.focus();]]>
                 </attribute>
@@ -32,10 +30,10 @@
             </row>
           </rows>
         </grid>
-        <hbox>
-          <button label="Simpan" onClick="@command('save')" />
-          <button label="Hapus" onClick="@command('delete')" />
-          <button label="Batal" onClick="@command('clear')" />
+        <hbox style="margin-top:3px;" pack="end" align="center" width="100%">
+          <button id="btnSimpan" label="Simpan" onClick="@command('save')" />
+          <button id="btnHapus" label="Hapus" onClick="@command('delete')" />
+          <button id="btnBatal" label="Batal" onClick="@command('clear')" />
         </hbox>
       </groupbox>
       <groupbox>
@@ -45,13 +43,13 @@
             style="overflow:auto; font-size:small" multiple="true"
             mold="paging" autopaging="true">
           <listhead>
-            <listheader label="NIP" width="100px" />
+            <listheader label="NIP" width="150px" />
             <listheader label="NAMA" />
           </listhead>
           <template name="model" var="data">
             <listitem>
               <listcell label="@load(data.nip)" />
-              <listcell label="@load(data.nama)" />
+              <listcell label="@load(data.nmPegawai)" />
             </listitem>
           </template>
         </listbox>
