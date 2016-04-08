@@ -11,7 +11,7 @@ import lab.aikibo.hibernate.HibernateUtil;
 
 public class PegawaiManager {
 	
-	public String getNamaByNipLama(String nip) {
+	public String getNamaByNip(String nip) {
 		// pada saat pemanggilan session, maka perlu dituju apakah sessionOracle atau sessionPostgres
 		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		Session session = HibernateUtil.getSessionPostgres().getCurrentSession();
@@ -29,6 +29,12 @@ public class PegawaiManager {
 		session.beginTransaction();
 		List<Pegawai> result = (List<Pegawai>) session.createQuery("from Pegawai").list();
 		return result;
+	}
+	
+	public boolean isAnyNip(String nip) {
+		String result = getNamaByNip(nip);
+		if(result != null) return true;
+		else return false;
 	}
 
 }
