@@ -6,6 +6,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
@@ -18,9 +19,13 @@ import lab.aikibo.manager.UserManager;
 import lab.aikibo.services.UserCredential;
 import lab.aikibo.util.Encrypt;
 
+import org.zkoss.bind.Property;
+import org.zkoss.bind.ValidationContext;
+import org.zkoss.bind.Validator;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
+import org.zkoss.bind.validator.AbstractValidator;
 import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.util.Clients;
@@ -387,7 +392,7 @@ public class AdmUserVM {
 		Clients.showNotification("Kesalahan parameter algoritma enkripsi, hubungi developer");
 	}
 	
-	
+		
 	// -- setter and getter
 
 	public String getCurrentNip() {
@@ -483,7 +488,12 @@ public class AdmUserVM {
 	}
 
 	public void setCurrentPassBaruConfirm(String currentPassBaruConfirm) {
-		this.currentPassBaruConfirm = currentPassBaruConfirm;
+		if(currentPassBaruConfirm.equals(currentPassBaru))
+		  this.currentPassBaruConfirm = currentPassBaruConfirm;
+		else {
+			Clients.showNotification("Konfirmasi password baru tidak sama");
+			return;
+		}
 	}
 
 	public int getStatus() {
