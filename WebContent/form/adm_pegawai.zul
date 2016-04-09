@@ -2,7 +2,8 @@
   <window title="Administrasi Pegawai" border="normal" mode="modal"
       width="500px" height="300px" closable="true"
       apply="org.zkoss.bind.BindComposer"
-      viewModel="@id('adm_peg_vm') @init('lab.aikibo.viewmodel.AdmPegawaiVM')">
+      viewModel="@id('adm_peg_vm') @init('lab.aikibo.viewmodel.AdmPegawaiVM')"
+      onClose="@global-command('close')">
     <vlayout>
       <groupbox width="300px">
         <caption>Identitas</caption>
