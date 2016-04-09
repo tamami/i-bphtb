@@ -154,7 +154,7 @@ public class AdmUserVM {
 	public void setCurrentLogin(String currentLogin) {
 		this.currentLogin = currentLogin;
 		currentNip = um.getNip(currentLogin);
-		currentPegawai = pm.getNamaByNipLama(currentNip);
+		currentPegawai = pm.getNamaByNip(currentNip);
 		Session session = Sessions.getCurrent();
 		currentPengguna = ((UserCredential) session.getAttribute("userCredential")).getNama();
 		getEditingButton();
