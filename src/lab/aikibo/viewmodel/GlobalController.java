@@ -19,6 +19,12 @@ public class GlobalController extends SelectorComposer<Component>
 	public void init() {}
 	
 	@GlobalCommand
+	public void close() {
+		Include include = (Include) Selectors.iterable(getPage(), "#mainInclude").iterator().next();
+		include.setSrc("");
+	}
+	
+	@GlobalCommand
 	public void updateView() {
 		Clients.showNotification("Nama page-nya : " + getPage().getRequestPath());
 		Include include = (Include) Selectors.iterable(getPage(), "#mainInclude").iterator().next();
@@ -36,6 +42,12 @@ public class GlobalController extends SelectorComposer<Component>
 	public void callAdmPegawai() {
 		Include include = (Include) Selectors.iterable(getPage(), "#mainInclude").iterator().next();
 		include.setSrc("/form/adm_pegawai.zul");
+	}
+	
+	@GlobalCommand
+	public void callAdmPpat() {
+		Include include = (Include) Selectors.iterable(getPage(), "#mainInclude").iterator().next();
+		include.setSrc("/form/adm_ppat.zul");
 	}
 
 }
