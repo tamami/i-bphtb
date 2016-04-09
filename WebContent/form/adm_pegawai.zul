@@ -22,7 +22,7 @@
             </row>          
             <row>
               <label value="Nama" />
-              <textbox id="nama" value="@bind(adm_peg_vm.currentPegawai.nmPegawai)">
+              <textbox id="nama" value="@bind(adm_peg_vm.currentPegawai.nmPegawai)" width="240px">
                 <attribute name="onOK">
                   <![CDATA[btnSimpan.focus();]]>
                 </attribute>
