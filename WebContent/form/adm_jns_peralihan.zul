@@ -1,0 +1,59 @@
+<zk>
+<window title="Administrasi Jenis Peralihan" border="normal" mode="modal"
+    width="700px" height="500px" closable="true"
+    apply="org.zkoss.bind.BindComposer"
+    viewModel="@id('adm_jns_alih_vm') @init('lab.aikibo.viewmodel.AdmJnsPeralihanVM')"
+    onClose="@global-command('close')">
+  <vlayout>
+    <groupbox width="500px">
+      <caption>Editing</caption>
+      <grid>
+        <columns>
+          <column width="100px" />
+          <column />
+        </columns>
+        <rows>
+          <row>
+            <label value="Kode Peralihan" />
+            <textbox id="kdPeralihan" value="@bind()">
+              <attribute name="onOK">
+                <![CDATA[nmPeralihan.focus();]]>
+              </attribute>
+            </textbox>
+          </row>
+          <row>
+            <label value="Nama Peralihan" />
+            <textbox id="nmPeralihan" value="@bind()">
+              <attribute name="onOK">
+                <![CDATA[btnSimpan.focus();]]>
+              </attribute>
+            </textbox>
+          </row>
+        </rows>
+      </grid>
+      <hbox style="margin-top:3px;" pack="end" align="center" width="100%">
+        <button id="btnSimpan" label="Simpan" onClick="@command('save')" />
+        <button id="btnBatal" label="Batal" onClick="@command('clear')" />
+      </hbox>
+    </groupbox>
+    <groupbox height="100%">
+      <caption>Data</caption>
+      <listbox id="box" model="@bind()"
+          selectedItem="@bind()"
+          style="overflow:auto; font-size:small;" multiple="false"
+          mold="paging" autopaging="true">
+        <listhead>
+          <listheader label="KODE" width="50px" />
+          <listheader label="PERALIHAN" />
+        </listhead>
+        <template name="model" var="data">
+          <listitem>
+            <listcell label="@load()" />
+            <listcell label="@load()" />
+          </listitem>
+        </template>
+      </listbox>
+    </groupbox>
+  </vlayout>
+</window>
+</zk>
