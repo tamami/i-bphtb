@@ -23,7 +23,7 @@
           </row>
           <row>
             <label value="Alamat PPAT" />
-            <textbox id="alamatPpat" value="@bind(adm_ppat_vm.currentPpat.alamatPpat)" width="180px">
+            <textbox id="alamatPpat" value="@bind(adm_ppat_vm.currentPpat.alamatPpat)" width="100%">
               <attribute name="onOK">
                 <![CDATA[btnSimpan.focus();]]>
               </attribute>
@@ -41,7 +41,7 @@
       <listbox id="box" model="@bind(adm_ppat_vm.daftarPpat)"
           selectedItem="@bind(adm_ppat_vm.currentPpat)"
           style="overflow:auto; font-size:small" multiple="true"
-          mold="paging" autopaging="true">
+          mold="paging" pageSize="5">
         <listhead>
           <listheader label="Nama PPAT" width="200px" />
           <listheader label="Alamat PPAT" />
