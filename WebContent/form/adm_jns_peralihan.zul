@@ -15,7 +15,7 @@
         <rows>
           <row>
             <label value="Kode Peralihan" />
-            <textbox id="kdPeralihan" value="@bind()">
+            <textbox id="kdPeralihan" value="@bind(adm_jns_alih_vm.currentJnsPeralihan.kdJnsPeralihan)">
               <attribute name="onOK">
                 <![CDATA[nmPeralihan.focus();]]>
               </attribute>
@@ -23,7 +23,7 @@
           </row>
           <row>
             <label value="Nama Peralihan" />
-            <textbox id="nmPeralihan" value="@bind()">
+            <textbox id="nmPeralihan" value="@bind(adm_jns_alih_vm.currentJnsPeralihan.jnsPeralihan)">
               <attribute name="onOK">
                 <![CDATA[btnSimpan.focus();]]>
               </attribute>
@@ -38,8 +38,8 @@
     </groupbox>
     <groupbox height="100%">
       <caption>Data</caption>
-      <listbox id="box" model="@bind()"
-          selectedItem="@bind()"
+      <listbox id="box" model="@bind(adm_jns_alih_vm.daftarJnsPeralihan)"
+          selectedItem="@bind(adm_jns_alih_vm.currentJnsPeralihan)"
           style="overflow:auto; font-size:small;" multiple="false"
           mold="paging" autopaging="true">
         <listhead>
@@ -48,8 +48,8 @@
         </listhead>
         <template name="model" var="data">
           <listitem>
-            <listcell label="@load()" />
-            <listcell label="@load()" />
+            <listcell label="@load(data.kdJnsPeralihan)" />
+            <listcell label="@load(data.jnsPeralihan)" />
           </listitem>
         </template>
       </listbox>
