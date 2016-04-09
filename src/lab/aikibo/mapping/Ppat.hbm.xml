@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+    SYSTEM "classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="lab.aikibo.entity.Ppat" table="ppat">
+    <id name="kdPpat" type="int">
+      <column name="kd_ppat" />
+    </id>
+    <property name="namaPpat" type="string">
+      <column name="nama_ppat" />
+    </property>
+    <property name="alamatPpat" type="string">
+      <column name="alamat_ppat" />
+    </property>
+  </class>
+</hibernate-mapping>
