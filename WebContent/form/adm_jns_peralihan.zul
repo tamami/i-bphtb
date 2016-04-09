@@ -36,12 +36,12 @@
         <button id="btnBatal" label="Batal" onClick="@command('clear')" />
       </hbox>
     </groupbox>
-    <groupbox height="100%">
+    <groupbox height="300px">
       <caption>Data</caption>
       <listbox id="box" model="@bind(adm_jns_alih_vm.daftarJnsPeralihan)"
           selectedItem="@bind(adm_jns_alih_vm.currentJnsPeralihan)"
           style="overflow:auto; font-size:small;" multiple="false"
-          mold="paging" autopaging="true">
+          mold="paging" autopaging="true" height="250px">
         <listhead>
           <listheader label="KODE" width="50px" />
           <listheader label="PERALIHAN" />
