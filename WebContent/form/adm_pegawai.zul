@@ -1,6 +1,6 @@
 <zk>
   <window title="Administrasi Pegawai" border="normal" mode="modal"
-      width="500px" height="300px" closable="true"
+      width="500px" height="500px" closable="true"
       apply="org.zkoss.bind.BindComposer"
       viewModel="@id('adm_peg_vm') @init('lab.aikibo.viewmodel.AdmPegawaiVM')"
       onClose="@global-command('close')">
@@ -42,7 +42,7 @@
         <listbox id="box" model="@bind(adm_peg_vm.daftarPegawai)"
             selectedItem="@bind(adm_peg_vm.currentPegawai)"
             style="overflow:auto; font-size:small" multiple="true"
-            mold="paging" autopaging="true">
+            mold="paging" pageSize="5">
           <listhead>
             <listheader label="NIP" width="150px" />
             <listheader label="NAMA" />
