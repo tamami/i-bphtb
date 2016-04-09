@@ -5,7 +5,7 @@
     viewModel="@id('adm_ppat_vm') @init('lab.aikibo.viewmodel.AdmPpatVM')"
     onClose="@global-command('close')">
   <vlayout>
-    <groupbox width="300px">
+    <groupbox width="400px">
       <caption>Identitas</caption>
       <grid>
         <columns>
@@ -43,7 +43,7 @@
           style="overflow:auto; font-size:small" multiple="true"
           mold="paging" autopaging="true">
         <listhead>
-          <listheader label="Nama PPAT" width="150px" />
+          <listheader label="Nama PPAT" width="200px" />
           <listheader label="Alamat PPAT" />
         </listhead>
         <template name="model" var="data">
