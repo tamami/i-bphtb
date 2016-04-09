@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+    SYSTEM "classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="lab.aikibo.entity.RefJenisPeralihan" table="ref_jenis_peralihan">
+    <id name="kdJnsPeralihan" type="int">
+      <column name="kd_jns_peralihan" />
+    </id>
+    <property name="jnsPeralihan" type="string">
+      <column name="jns_peralihan" />
+    </property>
+  </class>
+</hibernate-mapping>
