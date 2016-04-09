@@ -1,0 +1,9 @@
+<zk>
+<window title="Administrasi PPAT" border="normal" mode="modal"
+    width="500px" height="300px" closable="true"
+    apply="org.zkoss.bind.BindComposer"
+    viewModel="@id('adm_ppat_vm') @init('lab.aikibo.viewmodel.AdmPpatVM')">
+  <vlayout>
+  </vlayout>
+</window>
+</zk>
