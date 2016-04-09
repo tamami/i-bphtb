@@ -1,6 +1,6 @@
 <zk>
 <window title="Administrasi PPAT" border="normal" mode="modal"
-    width="500px" height="300px" closable="true"
+    width="500px" height="500px" closable="true"
     apply="org.zkoss.bind.BindComposer"
     viewModel="@id('adm_ppat_vm') @init('lab.aikibo.viewmodel.AdmPpatVM')"
     onClose="@global-command('close')">
@@ -9,7 +9,7 @@
       <caption>Identitas</caption>
       <grid>
         <columns>
-          <column width="60px" />
+          <column width="120px" />
           <column />
         </columns>
         <rows>
@@ -23,7 +23,7 @@
           </row>
           <row>
             <label value="Alamat PPAT" />
-            <textbox id="alamatPpat" value="@bind(adm_ppat_vm.currentPpat.alamatPpat)">
+            <textbox id="alamatPpat" value="@bind(adm_ppat_vm.currentPpat.alamatPpat)" width="180px">
               <attribute name="onOK">
                 <![CDATA[btnSimpan.focus();]]>
               </attribute>
@@ -48,8 +48,8 @@
         </listhead>
         <template name="model" var="data">
           <listitem>
-            <listcell label="@load()" />
-            <listcell label="@load()" />
+            <listcell label="@load(data.namaPpat)" />
+            <listcell label="@load(data.alamatPpat)" />
           </listitem>
         </template>
       </listbox>
