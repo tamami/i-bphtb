@@ -14,7 +14,7 @@
         <rows>
           <row>
             <label value="Nama PPAT" />
-            <textbox id="namaPpat" value="">
+            <textbox id="namaPpat" value="@bind(adm_ppat_vm.currentPpat.namaPpat)">
               <attribute name="onOK">
                 <![CDATA[alamatPpat.focus();]]>
               </attribute>
@@ -22,7 +22,7 @@
           </row>
           <row>
             <label value="Alamat PPAT" />
-            <textbox id="alamatPpat" value="">
+            <textbox id="alamatPpat" value="@bind(adm_ppat_vm.currentPpat.alamatPpat)">
               <attribute name="onOK">
                 <![CDATA[btnSimpan.focus();]]>
               </attribute>
@@ -37,8 +37,8 @@
     </groupbox>
     <groupbox>
       <caption>Data</caption>
-      <listbox id="box" model=""
-          selectedItem=""
+      <listbox id="box" model="@bind(adm_ppat_vm.daftarPpat)"
+          selectedItem="@bind(adm_ppat_vm.currentPpat)"
           style="overflow:auto; font-size:small" multiple="true"
           mold="paging" autopaging="true">
         <listhead>
