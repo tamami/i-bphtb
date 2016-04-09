@@ -49,5 +49,11 @@ public class GlobalController extends SelectorComposer<Component>
 		Include include = (Include) Selectors.iterable(getPage(), "#mainInclude").iterator().next();
 		include.setSrc("/form/adm_ppat.zul");
 	}
+	
+	@GlobalCommand
+	public void callAdmJnsPeralihan() {
+		Include include = (Include) Selectors.iterable(getPage(), "#mainInclude").iterator().next();
+		include.setSrc("/form/adm_jns_peralihan.zul");
+	}
 
 }
