@@ -4,6 +4,55 @@
     apply="org.zkoss.bind.BindComposer"
     viewModel="@id('adm_ppat_vm') @init('lab.aikibo.viewmodel.AdmPpatVM')">
   <vlayout>
+    <groupbox width="300px">
+      <caption>Identitas</caption>
+      <grid>
+        <columns>
+          <column width="60px" />
+          <column />
+        </columns>
+        <rows>
+          <row>
+            <label value="Nama PPAT" />
+            <textbox id="namaPpat" value="">
+              <attribute name="onOK">
+                <![CDATA[alamatPpat.focus();]]>
+              </attribute>
+            </textbox>
+          </row>
+          <row>
+            <label value="Alamat PPAT" />
+            <textbox id="alamatPpat" value="">
+              <attribute name="onOK">
+                <![CDATA[btnSimpan.focus();]]>
+              </attribute>
+            </textbox>
+          </row>
+        </rows>
+      </grid>
+      <hbox style="margin-top:3px;" pack="end" align="center" width="100%">
+        <button id="btnSimpan" label="Simpan" onClick="@command('save')" />
+        <button id="btnBatal" label="Batal" onClick="@command('clear')" />
+      </hbox>
+    </groupbox>
+    <groupbox>
+      <caption>Data</caption>
+      <listbox id="box" model=""
+          selectedItem=""
+          style="overflow:auto; font-size:small" multiple="true"
+          mold="paging" autopaging="true">
+        <listhead>
+          <listheader label="Nama PPAT" width="150px" />
+          <listheader label="Alamat PPAT" />
+        </listhead>
+        <template name="model" var="data">
+          <listitem>
+            <listcell label="@load()" />
+            <listcell label="@load()" />
+          </listitem>
+        </template>
+      </listbox>
+    </groupbox>
   </vlayout>
 </window>
 </zk>
