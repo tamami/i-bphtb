@@ -41,7 +41,7 @@
       <listbox id="box" model="@bind(adm_ppat_vm.daftarPpat)"
           selectedItem="@bind(adm_ppat_vm.currentPpat)"
           style="overflow:auto; font-size:small" multiple="true"
-          mold="paging" autopaging="true" height="250px">
+          mold="paging" pageSize="5" height="250px">
         <listhead>
           <listheader label="Nama PPAT" width="200px" />
           <listheader label="Alamat PPAT" />
