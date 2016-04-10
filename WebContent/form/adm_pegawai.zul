@@ -42,7 +42,7 @@
         <listbox id="box" model="@bind(adm_peg_vm.daftarPegawai)"
             selectedItem="@bind(adm_peg_vm.currentPegawai)"
             style="overflow:auto; font-size:small" multiple="true"
-            mold="paging" pageSize="5">
+            mold="paging" autopaging="true" height="250px">
           <listhead>
             <listheader label="NIP" width="150px" />
             <listheader label="NAMA" />
