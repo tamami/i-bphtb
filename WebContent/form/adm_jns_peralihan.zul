@@ -15,7 +15,7 @@
         <rows>
           <row>
             <label value="Kode Peralihan" />
-            <textbox id="kdPeralihan" value="@bind(adm_jns_alih_vm.currentJnsPeralihan.kdJnsPeralihan)">
+            <textbox id="kdPeralihan" value="@bind(adm_jns_alih_vm.currentJnsPeralihan.kdJnsPeralihan)" width="50px">
               <attribute name="onOK">
                 <![CDATA[nmPeralihan.focus();]]>
               </attribute>
@@ -23,7 +23,7 @@
           </row>
           <row>
             <label value="Nama Peralihan" />
-            <textbox id="nmPeralihan" value="@bind(adm_jns_alih_vm.currentJnsPeralihan.jnsPeralihan)">
+            <textbox id="nmPeralihan" value="@bind(adm_jns_alih_vm.currentJnsPeralihan.jnsPeralihan)" width="250px">
               <attribute name="onOK">
                 <![CDATA[btnSimpan.focus();]]>
               </attribute>
