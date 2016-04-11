@@ -1,0 +1,71 @@
+<zk>
+<window title="Administrasi NPOPTKP" border="normal" mode="modal"
+    width="700px" height="500px" closable="true"
+    apply="org.zkoss.bind.BindComposer"
+    viewModel="@id('adm_npoptkp_vm') @init('lab.aikibo.viewmodel.AdmNpoptkpVM')"
+    onClose="@global-command('close')">
+  <vlayout>
+    <groupbox width="500px">
+      <caption>Editing</caption>
+      <grid>
+        <columns>
+          <column width="100px" />
+          <column />
+        </columns>
+        <rows>
+          <row>
+            <label value="Tahun Peralihan" />
+            <textbox id="thnPeralihan" value=""
+                constraint="/\d{4}/: Isikan 4 digit ">
+              <attribute name="onOK">
+                <![CDATA[jnsPeralihan.focus();]]>
+              </attribute>
+            </textbox>
+          </row>
+          <row>
+            <label value="Jenis Peralihan" />
+            <listbox selectedItem="" mold="select"
+                model="" id="jnsPeralihan">
+              <template name="model" var="data">
+                <listitem>
+                  <listcell label="" />
+                </listitem>
+              </template>
+              <attribute name="onOK">
+                <![CDATA[npoptkp.focus();]]>
+              </attribute>
+            </listbox>
+          </row>
+          <row>
+            <label value="NPOPTKP" />
+            <textbox id="npoptkp" format="#,###">
+              <attribute name="onOK">
+                <![CDATA[btnSimpan.focus();]]>
+              </attribute>
+            </textbox>
+          </row>
+        </rows>
+      </grid>
+    </groupbox>
+    <groupbox>
+      <caption>Data</caption>
+      <listbox id="box" model="" selectedItem=""
+          style="overflow:auto; font-size:small; multiple="true"
+          mold="paging" pageSize="5" height="250px">
+        <listhead>
+          <listheader label="TAHUN PERALIHAN" width="50px" />
+          <listheader label="NPOPTKP" width="100px" />
+          <listheader label="JENIS PERALIHAN" />
+        </listhead>
+        <template name="model" var="data">
+          <listitem>
+            <listcell label="@load()" />
+            <listcell label="@load()" />
+            <listcell label="@load()" />
+          </listitem>
+        </template>
+      </listbox>
+    </groupbox>
+  </vlayout>
+</window>
+</zk>
