@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+    SYSTEM "classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="lab.aikibo.entity.RefNpoptkp" table="ref_npoptkp">
+    <id name="kdNpoptkp" type="long">
+      <column name="kd_npoptkp" />
+    </id>
+    <property name="thnPeralihan" type="string">
+      <column name="thn_peralihan" />
+    </property>
+    <property name="kdJnsPeralihan" type="int">
+      <column name="kd_jns_peralihan" />
+    </property>
+    <property name="npoptkp" type="long">
+      <column name="npoptkp" />
+    </property>
+  </class>
+</hibernate-mapping>
