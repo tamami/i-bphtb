@@ -15,12 +15,15 @@
         <rows>
           <row>
             <label value="Tahun Peralihan" />
-            <textbox id="thnPeralihan" value="@bind() @validator()"
-                constraint="/\d{4}/: Isikan 4 digit ">
-              <attribute name="onOK">
-                <![CDATA[jnsPeralihan.focus();]]>
-              </attribute>
-            </textbox>
+            <cell>
+              <textbox id="thnPeralihan" value="@bind(adm_npoptkp_vm) @validator()"
+                  constraint="/\d{4}/: Isikan 4 digit ">
+                <attribute name="onOK">
+                  <![CDATA[jnsPeralihan.focus();]]>
+                </attribute>
+              </textbox>
+              
+            </cell>
           </row>
           <row>
             <label value="Jenis Peralihan" />
