@@ -9,9 +9,9 @@
     <property name="thnPeralihan" type="string">
       <column name="thn_peralihan" />
     </property>
-    <property name="kdJnsPeralihan" type="int">
-      <column name="kd_jns_peralihan" />
-    </property>
+    <many-to-one name="jnsPeralihan" class="lab.aikibo.entity.RefJenisPeralihan" fetch="select">
+      <column name="kd_jns_peralihan" not-null="true" />
+    </many-to-one>
     <property name="npoptkp" type="long">
       <column name="npoptkp" />
     </property>
