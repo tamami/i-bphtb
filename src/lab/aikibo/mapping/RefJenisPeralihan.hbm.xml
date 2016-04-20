@@ -9,5 +9,12 @@
     <property name="jnsPeralihan" type="string">
       <column name="jns_peralihan" />
     </property>
+    <set name="daftarNpoptkp" table="ref_npoptkp"
+        inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="kd_jns_peralihan" not-null="true" />
+      </key>
+      <one-to-many class="lab.aikibo.entity.RefNpoptkp" />
+    </set>
   </class>
 </hibernate-mapping>
