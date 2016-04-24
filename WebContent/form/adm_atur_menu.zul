@@ -1,4 +1,46 @@
 <zk>
-<window title="Administrasi Pengaturan Menu" border="normal">
+<window title="Administrasi Pengaturan Menu" border="normal" mode="modal"
+    width="500px" height="500px" closable="true"
+    apply="org.zkoss.bind.BindComposer"
+    viewModel=""
+    onClose="@global-command('close')">
+  <vlayout>
+    <groupbox width="300px">
+      <caption>Pengguna</caption>
+      <grid>
+        <columns>
+          <column width="60px" />
+          <column />
+        </columns>
+        <rows>
+          <row>
+            <label value="Nama Pengguna" />
+            <combobox model="" selectedItem="">
+              <template name="model">
+                <comboitem label="@load(each)" />
+              </template>
+            </combobox>
+          </row>
+        </rows>
+      </grid>
+    </groupbox>
+    <groupbox>
+      <caption>Hak Akses</caption>
+      <tree multiple="true" checkmark="true">
+        <treecols>
+          <treecol label="Akses" />
+        </treecols>
+        <treechildren>
+          <treeitem>
+            <treerow>
+              <treecell label="Konfigurasi" />
+            </treerow>
+          </treeitem>
+          <treeitem label="Data" />
+          <treeitem label="Laporan" />
+        </treechildren>
+      </tree>
+    </groupbox>
+  </vlayout>
 </window>
 </zk>
