@@ -1,7 +1,7 @@
 <zk>
 <window title="Administrasi Status Berkas" border="normal" mode="modal" width="500px"
     height="500px" closable="true" apply="org.zkoss.bind.BindComposer"
-    viewModel=""
+    viewModel="@init(admStatusBerkas) @init(lab.aikibo.viewmodel.AdmStatusBerkas)"
     onClose="@global-command('close')"> 
   <vlayout>
     <groupbox width="300px">
