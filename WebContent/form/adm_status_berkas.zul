@@ -30,7 +30,7 @@
       <caption>Data</caption>
       <listbox id="box" model=""
           selectedItem=""
-          style="overflow=auto; font-size="small" multiple="true"
+          style="overflow=auto; font-size:small" multiple="true"
           mold="paging" autopaging="true" height="250px">
         <listhead>
           <listheader label="NOMOR" width="50px" />
