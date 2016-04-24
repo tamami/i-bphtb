@@ -54,7 +54,7 @@
     <groupbox>
       <caption>Data</caption>
       <listbox id="box" model="" selectedItem="@bind(adm_npoptkp_vm.currentNpoptkp)"
-          style="overflow:auto; font-size:small; multiple="true"
+          style="overflow:auto; font-size:small;" multiple="true"
           mold="paging" pageSize="5" height="250px">
         <listhead>
           <listheader label="TAHUN PERALIHAN" width="50px" />
