@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.zkoss.bind.annotation.Init;
 
+import lab.aikibo.entity.RefJenisPeralihan;
 import lab.aikibo.entity.RefNpoptkp;
 import lab.aikibo.manager.JenisPeralihanManager;
 
@@ -52,14 +53,16 @@ public class AdmNpoptkpVM {
 
 
 	public int getIndexJnsPeralihan() {
-		indexJnsPeralihan = currentNpoptkp.getKdJnsPeralihan() - 1;
+		indexJnsPeralihan = currentNpoptkp.getJnsPeralihan().getKdJnsPeralihan() - 1;
 		return indexJnsPeralihan;
 	}
 
 
 	public void setIndexJnsPeralihan(int indexJnsPeralihan) {
 		this.indexJnsPeralihan = indexJnsPeralihan;
-		currentNpoptkp.setKdJnsPeralihan(indexJnsPeralihan + 1);
+		RefJenisPeralihan jnsPeralihan = currentNpoptkp.getJnsPeralihan();
+		jnsPeralihan.setKdJnsPeralihan(indexJnsPeralihan + 1);
+		currentNpoptkp.setJnsPeralihan(jnsPeralihan);
 	}
 
 }
