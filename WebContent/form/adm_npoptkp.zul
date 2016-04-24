@@ -42,11 +42,11 @@
           </row>
           <row>
             <label value="NPOPTKP" />
-            <textbox id="npoptkp" format="#,###">
+            <intbox id="npoptkp" format="#,###">
               <attribute name="onOK">
                 <![CDATA[btnSimpan.focus();]]>
               </attribute>
-            </textbox>
+            </intbox>
           </row>
         </rows>
       </grid>
