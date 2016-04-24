@@ -19,7 +19,7 @@ public class NpoptkpManagerTest {
 	@Before
 	public void before() {
 		nm = new NpoptkpManager();
-		HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+		//HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
 	}
 	
 	@Test
@@ -31,7 +31,7 @@ public class NpoptkpManagerTest {
 	
 	@After
 	public void finish() {
-		HibernateUtil.getSessionFactory().getCurrentSession().close();
+		//HibernateUtil.getSessionFactory().getCurrentSession().close();
 	}
 
 }
