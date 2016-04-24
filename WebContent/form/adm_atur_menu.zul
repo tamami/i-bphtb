@@ -33,11 +33,36 @@
         <treechildren>
           <treeitem>
             <treerow>
-              <treecell label="Konfigurasi" />
+              <treecell label="Konfigurasi" checked=""/>
             </treerow>
+            <treechildren>
+              <treeitem label="Administrasi User" checked=""/>
+              <treeitem label="Administrasi Pegawai" checked="" />
+              <treeitem label="Administrasi PPAT" checked="" />
+              <treeitem label="Administrasi Jenis Peralihan" checked="" />
+              <treeitem label="Administrasi NPOPTKP" checked="" />
+              <treeitem label="Administrasi Status Berkas" checked="" />
+              <treeitem label="Administrasi Pengaturan Menu" checked="" />
+              <treeitem label="Konfigurasi Laporan" checked="" />
+            </treechildren>
           </treeitem>
-          <treeitem label="Data" />
-          <treeitem label="Laporan" />
+          <treeitem>
+            <treerow>
+              <treecell label="Data" />
+            </treerow>
+            <treechildren>
+              <treeitem label="Entry Transaksi" checked="" />
+            </treechildren>
+          </treeitem>
+          <treeitem>
+            <treerow>
+              <treecell label="Laporan" />
+            </treerow>
+            <treechildren>
+              <treeitem label="Data Objek Pajak" checked="" />
+              <treeitem label="Lembar Disposisi" checked="" />
+            </treechildren>
+          </treeitem>
         </treechildren>
       </tree>
     </groupbox>
