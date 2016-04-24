@@ -12,7 +12,7 @@ public class HibernateUtil {
 	
 	static {
 		try {
-			sessionFactory = new Configuration().configure().buildSessionFactory();
+			//sessionFactory = new Configuration().configure().buildSessionFactory();
 			sessionOracle = new Configuration().configure("oracleconfig.cfg.xml").buildSessionFactory();
 			sessionPostgres = new Configuration().configure("postgresconfig.cfg.xml").buildSessionFactory();
 		} catch(Throwable e) {
@@ -22,9 +22,9 @@ public class HibernateUtil {
 	
 	
 	// hanya digunakan untuk uji coba
-	public static SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
+	//public static SessionFactory getSessionFactory() {
+	//	return sessionFactory;
+	//}
 	
 	
 	public static SessionFactory getSessionOracle() {
