@@ -6,6 +6,43 @@
   <vlayout>
     <groupbox width="300px">
       <caption>Editing</caption>
+      <grid>
+        <columns>
+          <column width="60px" />
+          <column />
+        </columns>
+        <rows>
+          <row>
+            <label>Status Berkas</label>
+            <textbox id="statusBerkas" value="">
+              <attribute name="onOK">
+                <![CDATA[btnSimpan.focus();]]>
+              </attribute>
+            </textbox>
+          </row>
+        </rows>
+      </grid>
+      <hbox style="margin-top:3px;" pack="end" align="center" width="100%">
+        <button id="btnSimpan" label="Simpan" onClick="" />
+      </hbox>
+    </groupbox>
+    <groupbox>
+      <caption>Data</caption>
+      <listbox id="box" model=""
+          selectedItem=""
+          style="overflow=auto; font-size="small" multiple="true"
+          mold="paging" autopaging="true" height="250px">
+        <listhead>
+          <listheader label="NOMOR" width="50px" />
+          <listheader label="STATUS BERKAS" />
+        </listhead>
+        <template name="model" var="data">
+          <listitem>
+            <listcell label="" />
+            <listcell label="" />
+          </listitem>
+        </template>
+      </listbox> 
     </groupbox>
   </vlayout>
 </window>
