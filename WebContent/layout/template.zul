@@ -3,7 +3,7 @@
       if="${not sessionScope.userCredential.anonymous }"
       apply="org.zkoss.bind.BindComposer"
       viewModel="@id('globalController') @init('lab.aikibo.viewmodel.GlobalController')">
-    <north height="150px" border="none">
+    <north height="200px" border="none">
       <vlayout hflex="1">
         <include src="/layout/banner.zul" />
         <include src="/layout/menu.zul" />
