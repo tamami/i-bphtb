@@ -2,16 +2,17 @@
 <?link rel="stylesheet" type="text/css" href="/css/sb-admin-2.css" ?>
 <?link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css" ?>
 <zk xmlns:w="client" xmlns:n="native">
-<div hflex="1" vflex="1" sclass="banner" height="90px">
+<div class="container">
+<div hflex="1" vflex="1" class="jumbotron" height="90px">
   <hbox hflex="1" vflex="1" align="center">
     <a href="http://brebeskab.go.id/">
       <image src="/images/logo_kecil.png" width="90px" />
     </a>
     <div width="400px">
       <vbox>
-        <n:h2>PEMERINTAH KABUPATEN BREBES</n:h2>
-        <n:h1>DINAS PENDAPATAN DAN PENGELOLAAN KEUANGAN</n:h1>
-        <n:h4>Aplikasi Web BPHTB</n:h4>
+        <n:h4>PEMERINTAH KABUPATEN BREBES</n:h2>
+        <n:h3>DINAS PENDAPATAN DAN PENGELOLAAN KEUANGAN</n:h1>
+        <n:h6>Aplikasi Web BPHTB</n:h4>
       </vbox>
     </div>
     
@@ -25,5 +26,6 @@
           onClick="@command('logout')" />
     </hbox>
   </hbox>
+</div>
 </div>
 </zk>
