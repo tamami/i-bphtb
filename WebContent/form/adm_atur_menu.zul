@@ -2,7 +2,7 @@
 <window title="Administrasi Pengaturan Menu" border="normal" mode="modal"
     width="500px" height="500px" closable="true"
     apply="org.zkoss.bind.BindComposer"
-    viewModel=""
+    viewModel="@id(atur_menu_vm) @init(lab.aikibo.viewmodel.AdmAturMenu)"
     onClose="@global-command('close')">
   <vlayout>
     <groupbox width="300px">
