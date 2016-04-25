@@ -1,5 +1,7 @@
 <?link rel="stylesheet" type="text/css" href="/style.css" ?>
 <?link rel="stylesheet" type="text/css" href="/css/sb-admin-2.css" ?>
+<?link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css" ?>
+<zk xmlns:w="client" xmlns:n="native">
 <div hflex="1" vflex="1" sclass="banner" height="90px">
   <hbox hflex="1" vflex="1" align="center">
     <a href="http://brebeskab.go.id/">
@@ -24,3 +26,4 @@
     </hbox>
   </hbox>
 </div>
+</zk>
