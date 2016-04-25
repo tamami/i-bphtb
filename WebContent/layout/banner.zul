@@ -2,16 +2,18 @@
 <?link rel="stylesheet" type="text/css" href="/css/sb-admin-2.css" ?>
 <?link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css" ?>
 <zk xmlns:w="client" xmlns:n="native">
-<div class="container">
-<div hflex="1" vflex="1" class="jumbotron" height="90px">
+<div class="container"
+    style="background-color:#ddd; border-radius:6px; padding-left:5px; padding-right:5px;
+        margin-left=5px; margin-right=5px">
+<div hflex="1" vflex="1" class="jumbotron-modif" height="150px">
   <hbox hflex="1" vflex="1" align="center">
     <a href="http://brebeskab.go.id/">
       <image src="/images/logo_kecil.png" width="90px" />
     </a>
-    <div width="400px">
+    <div >
       <vbox>
-        <n:h4>PEMERINTAH KABUPATEN BREBES</n:h4>
-        <n:h3>DINAS PENDAPATAN DAN PENGELOLAAN KEUANGAN</n:h3>
+        <label style="font-size:14pt" value="PEMERINTAH KABUPATEN BREBES" />
+        <label style="font-size:20pt" value="DINAS PENDAPATAN DAN PENGELOLAAN KEUANGAN" />
         <n:h6>Aplikasi Web BPHTB</n:h6>
       </vbox>
     </div>
