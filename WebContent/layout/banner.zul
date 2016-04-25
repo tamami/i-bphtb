@@ -7,9 +7,9 @@
     </a>
     <div width="400px">
       <vbox>
-        <label value="PEMERINTAH KABUPATEN BREBES" sclass="head2" />
-        <label value="DINAS PENDAPATAN DAN PENGELOLAAN KEUANGAN" sclass="head2" />
-        <label value="Aplikasi Web BPHTB" sclass="head1" />
+        <n:h2>PEMERINTAH KABUPATEN BREBES</n:h2>
+        <n:h1>DINAS PENDAPATAN DAN PENGELOLAAN KEUANGAN</n:h1>
+        <n:h4>Aplikasi Web BPHTB</n:h4>
       </vbox>
     </div>
     
