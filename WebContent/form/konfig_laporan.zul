@@ -1,0 +1,51 @@
+<zk>
+<window title="KONFIGURASI LAPORAN" border="normal" mode="modal"
+    width="500px" height="500px" closable="true"
+    apply="org.zkoss.bind.BindComposer"
+    viewModel="@id(konfig_lap_vm) @init(lab.aikibo.viewmodel.KonfigLaporan)"
+    onClose="@global-command('close')">
+  <vlayout>
+    <groupbox width="400px">
+      <caption>Editor Konfigurasi</caption>
+      <grid>
+        <columns>
+          <column width=120px" />
+          <column />
+        </columns>
+        <rows>
+          <row>
+            <label value="NAMA PARAMETER" />
+            <textbox id="nmParameter" value="@load()" readonly="true"/>
+          </row>
+          <row>
+            <label value="ISI PARAMETER" />
+            <textbox id="isiParameter" value="@bind()" />
+          </row>
+        </rows>
+      </grid>
+      <hbox style="margin-top:3px;" pack="end" align="center" width="100%">
+        <button id="btnSimpan" label="Simpan" onClick="@command('save')" />
+        <button id="btnBatal" label="Batal" onClick="@command('clear')" />
+      </hbox>
+    </groubox>
+    <groupbox>
+      <caption>Data</caption>
+      <listbox id="box" model=""
+            selectedItem=""
+            style="overflow:auto; font-size:small" multiple="true"
+            mold="paging" autopaging="true" height="250px">
+          <listhead>
+            <listheader label="NAMA PARAMETER" width="150px" />
+            <listheader label="ISI PARAMETER" />
+          </listhead>
+          <template name="model" var="data">
+            <listitem>
+              <listcell label="" />
+              <listcell label="" />
+            </listitem>
+          </template>
+        </listbox>
+    </groupbox>
+  </vlayout>
+</window>
+</zk>
