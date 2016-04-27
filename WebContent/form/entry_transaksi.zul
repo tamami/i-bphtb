@@ -114,6 +114,17 @@
                   NJOP Bumi
                   <textbox value="" />
                 </row>
+                <row>
+                  Tanggal Register
+                  <datebox cols="12" format="medium" onCreate="self.value=new Date()" />
+                  Luas Bangunan Dialihkan
+                  <textbox value="" />
+                  NJOP Bangunan 
+                  <textbox value="" />
+                </row>
+                <row>
+                  
+                </row>
               </rows>
             </grid>
           </groupbox>
