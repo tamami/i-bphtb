@@ -1,6 +1,6 @@
 <zk>
 <window title="ENTRY TRANSAKSI BPHTB" border="normal" mode="modal"
-    width="1000px" height="600px" closable="true"
+    width="1000px" height="610px" closable="true"
     apply="org.zkoss.bind.BindComposer"
     viewModel="@id(entry_vm) @init(lab.aikibo.viewmodel.EntryTransaksi)"
     onClose="@global-command('close')">
@@ -98,11 +98,11 @@
             <caption>Transaksi</caption>
             <grid>
               <columns>
-                <column width="100px"/>
-                <column width="250px"/>
-                <column width="150px"/>
-                <column />
-                <column width="100px" />
+                <column width="130px"/>
+                <column width="220px"/>
+                <column width="180px"/>
+                <column width="120px"/>
+                <column width="130px" />
                 <column />
               </columns>
               <rows>
@@ -112,25 +112,106 @@
                   Luas Bumi Dialihkan
                   <textbox value="" width="100px"/>
                   NJOP Bumi
-                  <textbox value="" />
+                  <textbox value="" readonly="true"/>
                 </row>
                 <row>
                   Tanggal Register
                   <datebox cols="12" format="medium" onCreate="self.value=new Date()" />
                   Luas Bangunan Dialihkan
-                  <textbox value="" />
+                  <textbox value="" width="100px"/>
                   NJOP Bangunan 
+                  <textbox value="" readonly="true"/>
+                </row>
+                <row>
+                  PPAT
+                  <listbox mold="select" 
+                      focus="true"/>
+                  <cell />
+                  <cell />
+                  NJOP
+                  <textbox value="" readonly="true" />
+                </row>
+                <row>
+                  Jenis Peralian
+                  <listbox mold="select" 
+                      focus="true" />
+                  <cell />
+                  <cell />
+                  Nilai Transaksi
                   <textbox value="" />
                 </row>
                 <row>
-                  
+                  Dasar Peralihan
+                  <textbox value="" width="210px"/>
+                  <cell />
+                  <cell />
+                  Nilai Akumulasi
+                  <textbox value="" readonly="true" />
+                </row>
+                <row>
+                  Status Berkas
+                  <listbox mold="select"
+                      focus="true" />
+                  <cell />
+                  <cell />
+                  NPOPTKP
+                  <textbox value="" readonly="true" />
+                </row>
+                <row>
+                  Keterangan
+                  <textbox value="" height="35pt" width="210px"/>
                 </row>
               </rows>
             </grid>
           </groupbox>
+          <hbox align="center" pack="end" width="100%">
+            <button label="Simpan" />
+            <button label="Batal" />
+          </hbox>
         </vlayout>
       </tabpanel>
       <tabpanel>
+        <vlayout>
+          <grid>
+            <columns>
+              <column width="200px"/>
+              <column />
+            </columns>
+            <rows>
+              <row>
+                Cari Berdasarkan
+                <listbox mold="select" focus="true" />
+              </row>
+              <row>
+                Kata yang Dicari 
+                <textbox value="" />
+              </row>
+              <row>
+                <cell colspan="2">
+                  <listbox id="box" 
+                      style="overflow:auto; font-size:small" multiple="true"
+                      mold="paging" autopaging="true" height="250px">
+                    <listhead>
+                      <listheader label="NOP"  />
+                      <listheader label="No. SSPD" />
+                      <listheader label="Tgl Register" />
+                      <listheader label="Nama WP" />
+                      <listheader label="PPAT" />
+                      <listheader label="Status Berkas" />
+                      <listheader label="Keterangan" />
+                    </listhead>
+                    <template name="model" var="data">
+                      <listitem>
+              	        <listcell label="" />
+                        <listcell label="" />
+                      </listitem>
+                    </template>
+                  </listbox>
+                </cell>
+              </row>
+            </rows>
+          </grid>
+        </vlayout>
       </tabpanel>
     </tabpanels>
   </tabbox>
