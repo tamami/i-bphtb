@@ -1,0 +1,127 @@
+<zk>
+<window title="ENTRY TRANSAKSI BPHTB" border="normal" mode="modal"
+    width="1000px" height="600px" closable="true"
+    apply="org.zkoss.bind.BindComposer"
+    viewModel="@id(entry_vm) @init(lab.aikibo.viewmodel.EntryTransaksi)"
+    onClose="@global-command('close')">
+  <tabbox>
+    <tabs>
+      <tab label="Entry Data" />
+      <tab label="List Data" />
+    </tabs>
+    <tabpanels>
+      <tabpanel>
+        <vlayout>
+          <hlayout>
+            <groupbox width="400px">
+              <caption>Objek Pajak</caption>
+              <grid>
+                <columns>
+                  <column width="70px" />
+                  <column width="100px"/>
+                  <column width="80px" />
+                  <column />
+                </columns>
+                <rows>
+                  <row>
+                    <label value="NOP" />
+                    <cell colspan="3">
+                      <textbox value="" />
+                    </cell>
+                  </row>
+                  <row>
+                    <label value="a.n." />
+                    <cell colspan="3">
+                      <textbox value="" readonly="true" width="250px"/>
+                    </cell>
+                  </row>
+                  <row>
+                    <label value="Luas Bumi" />
+                    <textbox value="" readonly="true" width="80px"/>
+                    <label value="NJOP Bumi" />
+                    <textbox value="" readonly="true" width="120px" />
+                  </row>
+                  <row>
+                    <label value="Luas Bng" />
+                    <textbox value="" readonly="true" width="80px" />
+                    <label value="NJOP Bng" />
+                    <textbox value="" readonly="true" width="120px" />
+                  </row>
+                </rows>
+              </grid>
+            </groupbox>
+            <groupbox width="560px">
+              <caption>Wajib Pajak</caption>
+              <grid>
+                <columns>
+                  <column width="80px" />
+                  <column width="220px" />
+                  <column width="50px" />
+                  <column />
+                </columns>
+                <rows>
+                  <row>
+                    Nama WP
+                    <textbox value="" width="200px"/>
+                    KTP
+                    <textbox value="" />
+                  </row>
+                  <row>
+                    Jalan
+                    <textbox value="" width="200px" />
+                    NPWP
+                    <textbox value="" />
+                  </row>
+                  <row>
+                    Blok/Kav/No
+                    <textbox value="" width="200px" />
+                    <cell colspan="2">
+                      <hbox>
+                        RT
+                        <textbox value="" width="50px" />
+                        RW
+                        <textbox value="" width="50px" />
+                      </hbox>
+                    </cell>
+                  </row>
+                  <row>
+                    Kelurahan
+                    <textbox value="" width="200px"/>
+                    Kota
+                    <textbox value="" />
+                  </row>
+                </rows>
+              </grid>
+            </groupbox>
+          </hlayout>
+          <groupbox>
+            <caption>Transaksi</caption>
+            <grid>
+              <columns>
+                <column width="100px"/>
+                <column width="250px"/>
+                <column width="150px"/>
+                <column />
+                <column width="100px" />
+                <column />
+              </columns>
+              <rows>
+                <row>
+                  Tahun Pajak
+                  <textbox value="" />
+                  Luas Bumi Dialihkan
+                  <textbox value="" width="100px"/>
+                  NJOP Bumi
+                  <textbox value="" />
+                </row>
+              </rows>
+            </grid>
+          </groupbox>
+        </vlayout>
+      </tabpanel>
+      <tabpanel>
+      </tabpanel>
+    </tabpanels>
+  </tabbox>
+</window>
+</zk>
