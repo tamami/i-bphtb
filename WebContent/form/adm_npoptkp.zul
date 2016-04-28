@@ -16,7 +16,8 @@
           <row>
             <label value="Tahun Peralihan" />
             <cell>
-              <textbox id="thnPeralihan" value="@bind(adm_npoptkp_vm) @validator()"
+              <textbox id="thnPeralihan" value="@bind(adm_npoptkp_vm.currentNpoptkp.thnPeralihan) 
+                      @validator('lab.aikibo.validator.NpoptkpValidator', thnPeralihan=adm_npoptkp_vm.currentNpoptkp.thnPeralihan)"
                   constraint="/\d{4}/: Isikan 4 digit ">
                 <attribute name="onOK">
                   <![CDATA[jnsPeralihan.focus();]]>
@@ -27,8 +28,8 @@
           </row>
           <row>
             <label value="Jenis Peralihan" />
-            <listbox selectedItem="" mold="select"
-                model="" id="jnsPeralihan">
+            <listbox selectedIndex="@bind(adm_npoptkp_vm.indexJnsPeralihan)" mold="select"
+                model="@load('adm_npoptkp_vm.daftarJnsPeralihan')" id="jnsPeralihan">
               <template name="model" var="data">
                 <listitem>
                   <listcell label="" />
@@ -41,19 +42,19 @@
           </row>
           <row>
             <label value="NPOPTKP" />
-            <textbox id="npoptkp" format="#,###">
+            <intbox id="npoptkp" format="#,###">
               <attribute name="onOK">
                 <![CDATA[btnSimpan.focus();]]>
               </attribute>
-            </textbox>
+            </intbox>
           </row>
         </rows>
       </grid>
     </groupbox>
     <groupbox>
       <caption>Data</caption>
-      <listbox id="box" model="" selectedItem=""
-          style="overflow:auto; font-size:small; multiple="true"
+      <listbox id="box" model="" selectedItem="@bind(adm_npoptkp_vm.currentNpoptkp)"
+          style="overflow:auto; font-size:small;" multiple="true"
           mold="paging" pageSize="5" height="250px">
         <listhead>
           <listheader label="TAHUN PERALIHAN" width="50px" />

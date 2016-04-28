@@ -1,0 +1,71 @@
+<zk>
+<window title="Administrasi Pengaturan Menu" border="normal" mode="modal"
+    width="500px" height="500px" closable="true"
+    apply="org.zkoss.bind.BindComposer"
+    viewModel="@id(atur_menu_vm) @init(lab.aikibo.viewmodel.AdmAturMenu)"
+    onClose="@global-command('close')">
+  <vlayout>
+    <groupbox width="300px">
+      <caption>Pengguna</caption>
+      <grid>
+        <columns>
+          <column width="60px" />
+          <column />
+        </columns>
+        <rows>
+          <row>
+            <label value="Nama Pengguna" />
+            <combobox model="" selectedItem="">
+              <template name="model">
+                <comboitem label="@load(each)" />
+              </template>
+            </combobox>
+          </row>
+        </rows>
+      </grid>
+    </groupbox>
+    <groupbox>
+      <caption>Hak Akses</caption>
+      <tree multiple="true" checkmark="true">
+        <treecols>
+          <treecol label="Akses" />
+        </treecols>
+        <treechildren>
+          <treeitem>
+            <treerow>
+              <treecell label="Konfigurasi" checked=""/>
+            </treerow>
+            <treechildren>
+              <treeitem label="Administrasi User" checked=""/>
+              <treeitem label="Administrasi Pegawai" checked="" />
+              <treeitem label="Administrasi PPAT" checked="" />
+              <treeitem label="Administrasi Jenis Peralihan" checked="" />
+              <treeitem label="Administrasi NPOPTKP" checked="" />
+              <treeitem label="Administrasi Status Berkas" checked="" />
+              <treeitem label="Administrasi Pengaturan Menu" checked="" />
+              <treeitem label="Konfigurasi Laporan" checked="" />
+            </treechildren>
+          </treeitem>
+          <treeitem>
+            <treerow>
+              <treecell label="Data" />
+            </treerow>
+            <treechildren>
+              <treeitem label="Entry Transaksi" checked="" />
+            </treechildren>
+          </treeitem>
+          <treeitem>
+            <treerow>
+              <treecell label="Laporan" />
+            </treerow>
+            <treechildren>
+              <treeitem label="Data Objek Pajak" checked="" />
+              <treeitem label="Lembar Disposisi" checked="" />
+            </treechildren>
+          </treeitem>
+        </treechildren>
+      </tree>
+    </groupbox>
+  </vlayout>
+</window>
+</zk>

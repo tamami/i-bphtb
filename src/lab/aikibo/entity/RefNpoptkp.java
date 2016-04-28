@@ -7,7 +7,7 @@ public class RefNpoptkp implements Serializable {
 	private static final long serialVersionUID = 8798805834761190697L;
 	private long kdNpoptkp;
 	private String thnPeralihan;
-	private int kdJnsPeralihan;
+	private RefJenisPeralihan jnsPeralihan;
 	private long npoptkp;
 	
 	// --- setters and getters
@@ -20,12 +20,12 @@ public class RefNpoptkp implements Serializable {
 		this.kdNpoptkp = kdNpoptkp;
 	}
 	
-	public int getKdJnsPeralihan() {
-		return kdJnsPeralihan;
+	public RefJenisPeralihan getJnsPeralihan() {
+		return jnsPeralihan;
 	}
 	
-	public void setKdJnsPeralihan(int kdJnsPeralihan) {
-		this.kdJnsPeralihan = kdJnsPeralihan;
+	public void setJnsPeralihan(RefJenisPeralihan jnsPeralihan) {
+		this.jnsPeralihan = jnsPeralihan;
 	}
 	
 	public long getNpoptkp() {

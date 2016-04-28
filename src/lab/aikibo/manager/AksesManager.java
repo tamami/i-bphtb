@@ -13,12 +13,13 @@ import lab.aikibo.services.UserCredential;
 
 public class AksesManager {
 	
+	@SuppressWarnings("unchecked")
 	public RefAkses getAkses(String user) {
 		org.hibernate.Session sessHb = HibernateUtil.getSessionPostgres().getCurrentSession();
 		sessHb.beginTransaction();
 		Criteria criteria = sessHb.createCriteria(RefAkses.class);
 		criteria.add(Restrictions.eq("nmLogin", user));
-		List<RefAkses> dataRefAkses = criteria.list();
+		List<RefAkses> dataRefAkses = (List<RefAkses>)criteria.list();
 		if(dataRefAkses.size() == 1) return dataRefAkses.get(0);
 		else return null;
 	}

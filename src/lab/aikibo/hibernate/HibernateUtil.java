@@ -6,7 +6,8 @@ import org.hibernate.cfg.Configuration;
 /* Jika berhubungan dengan 2 database maka perlu 2 sessionFactory */
 public class HibernateUtil {
 	
-	//private static SessionFactory sessionFactory;
+	@SuppressWarnings("unused")
+	private static SessionFactory sessionFactory; // hanya dipake untuk uji coba
 	private static SessionFactory sessionOracle;
 	private static SessionFactory sessionPostgres;
 	
@@ -20,10 +21,11 @@ public class HibernateUtil {
 		}
 	}
 	
-	/*
-	public static SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}*/
+	
+	// hanya digunakan untuk uji coba
+	//public static SessionFactory getSessionFactory() {
+	//	return sessionFactory;
+	//}
 	
 	
 	public static SessionFactory getSessionOracle() {

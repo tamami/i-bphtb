@@ -37,6 +37,7 @@ public class MenuVM {
 		setupMenu();
 	}
 	
+	@SuppressWarnings("unused")
 	private void setAllTrue() {
 		setKonfigurasiMn(true);
 		setAdmUserMn(true);
