@@ -160,6 +160,10 @@
                 <row>
                   Keterangan
                   <textbox value="" height="35pt" width="210px"/>
+                  <cell />
+                  <cell />
+                  <label style="font-weight:bold;">BPHTB</label>
+                  <textbox value="" readonly="true" />
                 </row>
               </rows>
             </grid>
@@ -190,7 +194,7 @@
                 <cell colspan="2">
                   <listbox id="box" 
                       style="overflow:auto; font-size:small" multiple="true"
-                      mold="paging" autopaging="true" height="250px">
+                      mold="paging" autopaging="true" height="410px">
                     <listhead>
                       <listheader label="NOP"  />
                       <listheader label="No. SSPD" />
@@ -211,6 +215,9 @@
               </row>
             </rows>
           </grid>
+          <hbox width="100%" align="center" pack="end">
+            <button label="Ubah" />
+          </hbox>
         </vlayout>
       </tabpanel>
     </tabpanels>
